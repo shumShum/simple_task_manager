@@ -16,3 +16,4 @@
 
 /config/databases.yml
 /.vagrant
+coverage

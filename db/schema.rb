@@ -11,6 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130716093809) do
+
+  create_table "stories", :force => true do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "stories", ["user_id"], :name => "index_stories_on_user_id"
+
+  create_table "story_comments", :force => true do |t|
+    t.integer  "story_id"
+    t.integer  "user_id"
+    t.string   "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "story_comments", ["story_id"], :name => "index_story_comments_on_story_id"
+  add_index "story_comments", ["user_id"], :name => "index_story_comments_on_user_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

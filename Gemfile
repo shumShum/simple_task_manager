@@ -8,6 +8,9 @@ gem 'pg'
 group :development do
 	gem 'rb-readline', '~> 0.4.2'
 	gem 'awesome_print'
+	gem 'guard-test'
+	gem 'ruby-prof'
+	gem 'simplecov'
 end
 
 group :assets do
@@ -20,3 +23,4 @@ end
 gem 'jquery-rails'
 
 gem 'haml-rails'
+gem 'twitter-bootstrap-rails'
