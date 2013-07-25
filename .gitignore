@@ -16,4 +16,6 @@
 
 /config/databases.yml
 /.vagrant
+Vagrantfile
+/cookbooks
 coverage

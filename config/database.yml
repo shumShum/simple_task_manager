@@ -3,8 +3,8 @@ development:
   encoding: utf8
   database: stmdb
   pool: 5
-  username: shumgena
-  password:
+  username: task
+  password: 1
   host: localhost
 
 test:
@@ -12,15 +12,6 @@ test:
   encoding: utf8
   database: stmdb_test
   pool: 5
-  username: shumgena
-  password:
-  host: localhost
-
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: stmdb_prod
-  pool: 5
-  username: shumgena
-  password:
+  username: task
+  password: 1
   host: localhost

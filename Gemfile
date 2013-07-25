@@ -21,6 +21,11 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'execjs'
+gem 'therubyracer'
 
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
+
+gem 'unicorn'
+gem 'foreman'
