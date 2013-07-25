@@ -11,6 +11,7 @@ group :development do
 	gem 'guard-test'
 	gem 'ruby-prof'
 	gem 'simplecov'
+  gem 'pry'
 end
 
 group :assets do
@@ -27,7 +28,6 @@ gem 'execjs'
 gem 'therubyracer'
 
 gem 'haml-rails'
-gem 'twitter-bootstrap-rails'
-
+gem 'bootstrap-sass'
 gem 'unicorn'
 gem 'foreman'

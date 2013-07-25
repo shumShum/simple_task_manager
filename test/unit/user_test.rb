@@ -32,7 +32,11 @@ class UserTest < ActiveSupport::TestCase
       ].each do |email|
       user.email = email
       assert !user.save    
-    end  
+    end 
+    user.email = 'qwe@mail.ru' 
+    user.save
+    user = User.new(email: 'qwe@mail.ru', password: '123456', password_confirmation: '123456')
+    assert !user.save
   end
 
 end
