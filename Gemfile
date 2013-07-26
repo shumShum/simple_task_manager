@@ -8,7 +8,10 @@ gem 'pg'
 group :development do
 	gem 'rb-readline', '~> 0.4.2'
 	gem 'awesome_print'
+
 	gem 'guard-test'
+  gem 'terminal-notifier-guard'
+
 	gem 'ruby-prof'
 	gem 'simplecov'
   gem 'pry'
@@ -29,5 +32,7 @@ gem 'therubyracer'
 
 gem 'haml-rails'
 gem 'bootstrap-sass'
+gem 'simple_form'
+
 gem 'unicorn'
 gem 'foreman'

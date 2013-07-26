@@ -1,0 +1,7 @@
+.span6
+  = simple_form_for(:session, url: sessions_path) do |f| 
+    = render 'error_messages'
+    = f.input :email 
+    = f.input :password
+      
+    = f.button :submit

@@ -13,3 +13,5 @@ guard :test do
   watch('app/controllers/application_controller.rb') { ["test/functional", "test/integration"] }
 end
 
+# notification :terminal_notifier, host: '10.0.2.2', password: "1"
+

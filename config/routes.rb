@@ -1,6 +1,11 @@
 SimpleTaskManager::Application.routes.draw do
   
-  resources :users
-  root to: 'users#index'
+  root to: 'stories#index'
+
+  resources :sessions
+  match '/signout', to: 'sessions#destroy', via: :delete
+
+  resources :users, only: [:new, :create]
+  resources :stories
 
 end

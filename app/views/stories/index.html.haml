@@ -1,0 +1,18 @@
+= render partial: 'header'
+
+.span12
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.span1 ID
+        %th.span5 Description
+        %th.span2 Assigner
+        %th.span2 Assignee
+    %tbody
+      - if @stories.present?
+        - @stories.each do |story|
+          %tr
+            %td= "##{story.id}"
+            %td= story.title
+            %td= story.parent.name
+            %td= story.child.name

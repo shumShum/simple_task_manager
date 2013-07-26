@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
 
   validates :password, presence: true, 
@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true,
                     uniqueness: true,
                     format: { with: VALID_EMAIL_REGEX }
+
+  has_many :to_stories, class_name: 'Story', foreign_key: 'child_id'
+  has_many :by_stories, class_name: '', foreign_key: 'parent_id'
+  
 end

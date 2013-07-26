@@ -14,13 +14,16 @@
 ActiveRecord::Schema.define(:version => 20130725122731) do
 
   create_table "stories", :force => true do |t|
+    t.string   "title"
     t.text     "body"
-    t.integer  "user_id"
+    t.integer  "parent_id"
+    t.integer  "child_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "stories", ["user_id"], :name => "index_stories_on_user_id"
+  add_index "stories", ["child_id"], :name => "index_stories_on_child_id"
+  add_index "stories", ["parent_id"], :name => "index_stories_on_parent_id"
 
   create_table "story_comments", :force => true do |t|
     t.integer  "story_id"
