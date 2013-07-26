@@ -12,7 +12,7 @@
       - if @stories.present?
         - @stories.each do |story|
           %tr
-            %td= "##{story.id}"
+            %td= link_to "##{story.id}", story
             %td= story.title
             %td= story.parent.name
             %td= story.child.name

@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX }
 
   has_many :to_stories, class_name: 'Story', foreign_key: 'child_id'
-  has_many :by_stories, class_name: '', foreign_key: 'parent_id'
-  
+  has_many :by_stories, class_name: 'Story', foreign_key: 'parent_id'
+
 end

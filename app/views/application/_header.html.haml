@@ -2,9 +2,12 @@
 .navbar
   .navbar-inner
     %ul.nav
-      %li.active.span2= link_to 'All tasks', 'stories#index'
-      %li.span2= link_to 'Assigned to me', 'stories#tasks_to_me'
-      %li.span2= link_to 'Assigned by me', 'stories#tasks_by_me'
+      %li.span2{class: navbar_option(@option[:all])}
+        = link_to 'All tasks', stories_path
+      %li.span2{class: navbar_option(@option[:to])}
+        = link_to 'Assigned to me', '/stories/option/to'
+      %li.span2{class: navbar_option(@option[:by])}
+        = link_to 'Assigned by me', '/stories/option/by'
 
       %li.span4{style: 'text-align: right; padding-top: 10px;'}= current_user.name 
       %li.span2= link_to 'Sign out', signout_path, method: :delete
