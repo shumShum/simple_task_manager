@@ -1,0 +1,21 @@
+= render partial: 'header'
+%h4.page-header.row.span12{style: "margin-left: 40px"}
+  .span10
+    = "##{@story.id} #{@story.title}"
+.row.span12
+  .span2 Assigner:
+  .span5= @story.parent.name
+.row.span12
+  .span2 Assignee:
+  .span5= @story.child.name
+.row.span12
+  .span2 State:
+  .span5
+    #change-state-btn
+      = render 'change_state_btn'
+.row.span12{style: 'margin-top: 15px; margin-left: 40px;'}
+  .span6= @story.body
+#comment-list
+  = render 'comment_list'
+#add-comment
+  = render 'add_comment'

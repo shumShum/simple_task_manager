@@ -1,7 +1,24 @@
-.span6
-  = simple_form_for(:session, url: sessions_path) do |f| 
-    = render 'error_messages'
-    = f.input :email 
-    = f.input :password
-      
-    = f.button :submit
+.form-page-bg
+  .form-page
+    .row
+      .span5
+        %h3 Sign in
+      .span4 
+        %h3 Sign up
+    .row
+      .span5
+        = simple_form_for(:session, url: sessions_path) do |f| 
+          = render 'sessions/error_new_session_messages'
+          = f.input :email 
+          = f.input :password
+            
+          = f.button :submit, 'Enter'
+      .span4
+        = simple_form_for @user do |f| 
+          = render 'users/error_messages'
+          = f.input :email 
+          = f.input :name
+          = f.input :password
+          = f.input :password_confirmation
+          
+          = f.button :submit, 'New user'

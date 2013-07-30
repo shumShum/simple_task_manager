@@ -1,0 +1,11 @@
+= render partial: 'header'
+%h4.page-header.row.span12{style: "margin-left: 40px"}
+  .span10 New task
+.span12{style: "margin-left: 40px;"}
+  = simple_form_for @story do |f|
+    = f.input :title
+    = f.input :body, input_html: { rows: 5, style: "width: 565px;" } 
+    = f.association :child, label: 'Assigned to'
+    = f.hidden_field :parent_id, value: current_user.id 
+
+    =f.button :submit, 'Create task'

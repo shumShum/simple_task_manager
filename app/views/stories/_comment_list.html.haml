@@ -1,0 +1,18 @@
+.span7{style: "margin-top: 15px;"}
+  %table.table
+    %thead
+      %tr
+        %th Comments
+    %tbody
+      - @story.story_comments.sort{|x,y| x.created_at <=> y.created_at}.each do |comment|
+        %tr
+          %td
+            .comment.span7
+              .row
+                %h6.span2= comment.user.name
+              .row
+                .span6{style: "margin-left: 30px;"}= comment.body
+              .row
+                %h6.span2{style: "color: #999"}= comment.created_at.strftime("%d.%m.%Y %H:%M")
+                - if comment.user == current_user
+                  %h6.span2.delete_comment= link_to "удалить", comment, method: :delete, remote: true

@@ -1,0 +1,27 @@
+.form-page-bg { 
+    position: fixed; 
+    height: 100%;
+    width: 100%;
+    background: #111;
+    background: rgba(70,70,70,.8);
+    z-index: 100;
+    top: 0;
+    left: 0; 
+    }
+
+  .form-page {
+    top: 100px; 
+    left: 50%;
+    margin-left: -400px;
+    width: 720px;
+    background: #E9E9E9 url(modal-gloss.png) no-repeat -200px -80px;
+    position: absolute;
+    z-index: 101;
+    padding: 30px 40px 34px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -box-shadow: 0 0 10px rgba(0,0,0,.4);
+    }

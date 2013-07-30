@@ -26,9 +26,14 @@ end
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+gem 'validates'
+
 gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
+
+gem 'state_machine'
+gem 'kaminari'
 
 gem 'haml-rails'
 gem 'bootstrap-sass'

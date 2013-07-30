@@ -2,16 +2,13 @@ class UsersController < ApplicationController
 
   before_filter :to_root
 
-  def new
-    @user = User.new
-  end
-
   def create
     @user = User.new(params[:user])
-    if @user.save
+    if @user.save && @user.authenticate(params[:user][:password])
+      save_users_session(@user.id)
       redirect_to root_path
     else
-      render 'new'
+      render new_session_path
     end
   end
 

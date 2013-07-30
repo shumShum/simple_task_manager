@@ -9,8 +9,11 @@ class User < ActiveRecord::Base
   validates :email, presence: true,
                     uniqueness: true,
                     format: { with: VALID_EMAIL_REGEX }
+  validates :name, presence: true
 
   has_many :to_stories, class_name: 'Story', foreign_key: 'child_id'
   has_many :by_stories, class_name: 'Story', foreign_key: 'parent_id'
+
+  has_many :story_comments
 
 end

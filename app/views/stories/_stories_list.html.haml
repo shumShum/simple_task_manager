@@ -1,0 +1,19 @@
+.span12
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.span1 ID
+        %th.span4 Description
+        %th.span2 Assigner
+        %th.span2 Assignee
+        %th.span1 State
+    %tbody
+      - if @stories.present?
+        - @stories.each do |story|
+          %tr
+            %td= link_to "##{story.id}", story
+            %td= story.title
+            %td= story.parent.name
+            %td= story.child.name
+            %td
+              %span.label{style: "background: #{state_color(story.state)}"}= story.state 

@@ -20,5 +20,9 @@ class ApplicationController < ActionController::Base
   def to_root
     redirect_to root_path if current_user.present?
   end
+
+  def save_users_session(user_id)
+    session[:user_id] = user_id
+  end
   
 end
