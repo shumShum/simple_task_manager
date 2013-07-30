@@ -1,5 +1,8 @@
 one: 
-  email: 'username@mail.com'
+  name: 'Username One'
+  email: 'username1@mail.com'
   password_digest: '123123123'
-two: {}
-#  column: value
+two: 
+  name: 'Username Two'
+  email: 'username2@mail.com'
+  password_digest: '243512243'
