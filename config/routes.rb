@@ -8,7 +8,7 @@ SimpleTaskManager::Application.routes.draw do
   resources :users, only: [:create]
 
   resources :stories do
-    get :event
+    post :event
     get :out_by_filters
   end
   match '/out_by_filters', to: 'stories#out_by_filters'
