@@ -28,10 +28,6 @@ class SessionsController < ApplicationController
 
   private
 
-  def sign_in(user_id)
-    session[:user_id] = user_id
-  end
-
   def sign_out
     session[:user_id] = nil
     redirect_to new_session_path

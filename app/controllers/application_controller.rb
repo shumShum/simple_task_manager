@@ -20,5 +20,9 @@ class ApplicationController < ActionController::Base
   def redirect_if_user_is_authorized
     redirect_to root_path if current_user.present?
   end
+
+  def sign_in(user_id)
+    session[:user_id] = user_id
+  end
   
 end
