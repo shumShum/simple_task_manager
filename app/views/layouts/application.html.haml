@@ -10,5 +10,8 @@
     = yield
     %footer.footer.span12
       #badges
+        = image_tag 'https://travis-ci.org/shumShum/simple_task_manager.png?branch=master'
+        = link_to 'https://coveralls.io/r/shumShum/simple_task_manager?branch=master' do
+          = image_tag 'https://coveralls.io/repos/shumShum/simple_task_manager/badge.png?branch=master', alt: 'Coverage Status'
         = link_to "https://codeclimate.com/github/shumShum/simple_task_manager" do
           = image_tag "https://codeclimate.com/github/shumShum/simple_task_manager.png"
