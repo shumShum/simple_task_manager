@@ -13,7 +13,6 @@ group :development do
   gem 'terminal-notifier-guard'
 
 	gem 'ruby-prof'
-	gem 'simplecov'
   gem 'pry'
 end
 
@@ -46,3 +45,4 @@ gem 'unicorn'
 gem 'foreman'
 
 gem 'coveralls', require: false
+gem 'simplecov'
