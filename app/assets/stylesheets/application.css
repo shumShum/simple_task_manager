@@ -6,11 +6,15 @@
  *= require_tree .
 */
 
- .delete_comment a {
+.delete_comment a {
   color: #e65a76;
- }
+}
 
- .comment {
+.comment {
   border-top: 3px;
   margin-left: 40px;
- }
+}
+
+.footer {
+  padding-top: 50px;
+} 

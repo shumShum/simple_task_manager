@@ -44,3 +44,5 @@ gem 'simple_form'
 
 gem 'unicorn'
 gem 'foreman'
+
+gem 'coveralls', require: false

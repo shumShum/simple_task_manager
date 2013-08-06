@@ -8,4 +8,7 @@
     = csrf_meta_tags
   %body
     = yield
-
+    %footer.footer.span12
+      #badges
+        = link_to "https://codeclimate.com/github/shumShum/simple_task_manager" do
+          = image_tag "https://codeclimate.com/github/shumShum/simple_task_manager.png"
