@@ -13,16 +13,12 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  def to_signin
+  def redirect_if_user_is_not_authorized
     redirect_to new_session_path unless current_user.present?  
   end
 
-  def to_root
+  def redirect_if_user_is_authorized
     redirect_to root_path if current_user.present?
-  end
-
-  def save_users_session(user_id)
-    session[:user_id] = user_id
   end
   
 end

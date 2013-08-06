@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  before_filter :to_root, except: [:destroy]
+  before_filter :redirect_if_user_is_authorized, except: [:destroy]
 
   def new
     if current_user.present?
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
-      save_users_session(user.id)
+      sign_in(user.id)
       redirect_to root_url
     else
       flash[:error] = "Invalid email or password"
@@ -23,6 +23,16 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    sign_out
+  end
+
+  private
+
+  def sign_in(user_id)
+    session[:user_id] = user_id
+  end
+
+  def sign_out
     session[:user_id] = nil
     redirect_to new_session_path
   end

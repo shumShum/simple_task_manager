@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
     reject: [{label: 'start', color: '#7fcee2'}]
   }
 
-  before_filter :to_signin, :def_option
+  before_filter :redirect_if_user_is_not_authorized, :def_option
 
   def show
     @story = Story.find(params[:id])
@@ -63,7 +63,7 @@ class StoriesController < ApplicationController
 
   def event
     @story = Story.find(params[:story_id])
-    @story.send(params[:event].to_s)
+    @story.fire_state_event(params[:event])
     @change_buttons = STATES_BTN[@story.state.to_sym]
 
     respond_to do |format|

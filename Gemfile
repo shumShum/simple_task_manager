@@ -36,7 +36,10 @@ gem 'state_machine'
 gem 'kaminari'
 
 gem 'haml-rails'
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
+
+gem "twitter-bootstrap-rails"
+
 gem 'simple_form'
 
 gem 'unicorn'
