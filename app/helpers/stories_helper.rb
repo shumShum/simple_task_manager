@@ -10,4 +10,8 @@ module StoriesHelper
   def state_color(state)
     STATE_COLORS[state.to_sym] if state.present? 
   end
+
+  def users_for_select
+    User.all.map{|u| {u.name => u.id}}.reduce Hash.new.merge({'all'=>'all'}), :merge
+  end
 end

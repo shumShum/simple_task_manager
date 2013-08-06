@@ -1,5 +1,8 @@
 class StoryCommentsController < ApplicationController
 
+  #TODO
+  # код выглядит по меньшей мере странно, но как решить проблему с обнулением переменной @story 
+  # пока не знаю, поэтому оставлю как есть до лучших времен.
   def create
     @story_comment = StoryComment.new(params[:story_comment])
     unless @story_comment.save
