@@ -1,10 +1,12 @@
 one: 
   title: 'Story1 title'
   body: 'Description 1'
-  parent_id: 1
-  child_id: 2
+  parent: one
+  child: two
+  state: 'new'
 two:
   title: 'Story2 title'
   body: 'Description 2'
-  parent_id: 2
-  child_id: 1
+  parent: two
+  child: one
+  state: 'new'

@@ -26,11 +26,4 @@ class SessionsController < ApplicationController
     sign_out
   end
 
-  private
-
-  def sign_out
-    session[:user_id] = nil
-    redirect_to new_session_path
-  end
-
 end
