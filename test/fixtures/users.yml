@@ -1,8 +1,0 @@
-one: 
-  name: 'Username One'
-  email: 'username1@mail.com'
-  password_digest: '123123123'
-two: 
-  name: 'Username Two'
-  email: 'username2@mail.com'
-  password_digest: '243512243'

@@ -1,8 +1,0 @@
-one: 
-  body: 'comment1 body' 
-  user_id: 1
-  story_id: 1
-two:
-  body: 'comment2 body' 
-  user_id: 2
-  story_id: 1
