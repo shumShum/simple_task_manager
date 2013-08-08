@@ -6,7 +6,7 @@ class StoriesControllerTest < ActionController::TestCase
     @user = create :user
     sign_in(@user.id)
 
-    create :story
+    @story = create :story
   end
   
   test "should get index" do
@@ -20,12 +20,14 @@ class StoriesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, {id: stories(:one).id}
+    get :show, {id: @story.id}
     assert_response :success
   end
 
   test "should create story" do
-    attrs = attributes_for(:story)
+    attrs = attributes_for(:story, title: 'test create')
+    attrs[:parent_id] = create :user, email: 'parentnewtask@mail.ru'
+    attrs[:child_id] = create :user, email: 'childnewtask@mail.ru'
     post :create, story: attrs
 
     assert_response :redirect
