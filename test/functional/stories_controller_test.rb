@@ -1,20 +1,17 @@
 require 'test_helper'
 
 class StoriesControllerTest < ActionController::TestCase
-  include Authorization
-
-  fixtures :stories
 
   def setup
-    FactoryGirl.create(:user) do |user|
-      sign_in(user.id)
-    end
+    @user = create :user
+    sign_in(@user.id)
+
+    create :story
   end
   
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:stories)
   end
 
   test "should get new" do
@@ -25,15 +22,19 @@ class StoriesControllerTest < ActionController::TestCase
   test "should get show" do
     get :show, {id: stories(:one).id}
     assert_response :success
-    assert_not_nil assigns(:story)
   end
 
   test "should create story" do
-    assert_difference('Story.count') do
-      post :create, story: FactoryGirl.attributes_for(:story)
-    end
-   
-    assert_redirected_to assigns(:story)
+    attrs = attributes_for(:story)
+    post :create, story: attrs
+
+    assert_response :redirect
+    story = Story.where(title: attrs[:title]).first
+    assert story
+  end
+
+  test "should call event" do
+
   end
 
 end

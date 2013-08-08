@@ -3,11 +3,12 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
   
   test "should create user" do
-    assert_difference('User.count') do
-      post :create, user: FactoryGirl.attributes_for(:user)
-    end
+    attrs = attributes_for(:user)
+    post :create, user: attrs
 
-    assert_redirected_to root_path
+    assert_response :redirect
+    user = User.where(email: attrs[:email]).first
+    assert user
   end
 
 end
