@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :story_comment do
-    body 'comment body'
+    body 'comment body 1'
     association :user, factory: :commentator
     story
   end
