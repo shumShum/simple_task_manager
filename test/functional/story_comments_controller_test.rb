@@ -7,7 +7,6 @@ class StoryCommentsControllerTest < ActionController::TestCase
     sign_in(@user.id)
 
     @story = create :story
-    # binding.pry
     @commentator = create :commentator
     @comment = create :story_comment, user_id: @commentator.id, story_id: @story.id
   end
