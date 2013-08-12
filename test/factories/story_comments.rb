@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :story_comment do
-    body 'comment body'
-    user_id 1
-    story_id 1
+    body 'comment body 1'
+    association :user, factory: :commentator
+    story
   end
 
 end

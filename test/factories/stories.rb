@@ -3,9 +3,9 @@
 FactoryGirl.define do
   factory :story do
     title 'Test task' 
-    body 'description for testt task'
-    parent_id 1
-    child_id 2
+    body 'description for test task'
+    parent
+    child
   end
 
 end
