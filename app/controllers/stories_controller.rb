@@ -20,15 +20,16 @@ class StoriesController < ApplicationController
   def index
     case params[:option]
     when 'to'
-      @stories = current_user.to_stories
+      @search = Story.where(child_id: current_user).search(params[:q])
       @option[:to] = true
     when 'by'
-      @stories = current_user.by_stories
+      @search = Story.where(parent_id: current_user).search(params[:q])
       @option[:by] = true
     else
-      @stories = Story.all
+      @search = Story.search(params[:q])
       @option[:all] = true
     end
+    @stories = @search.result
   end
 
   def out_by_filters

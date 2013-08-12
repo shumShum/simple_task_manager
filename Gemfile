@@ -50,3 +50,5 @@ gem 'simplecov'
 gem 'spring'
 gem 'guard-spring'
 gem 'rb-readline', '~> 0.4.2'
+
+gem 'ransack'
