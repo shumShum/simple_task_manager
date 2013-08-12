@@ -6,7 +6,6 @@ gem 'rails', '3.2.13'
 gem 'pg'
 
 group :development do
-	gem 'rb-readline', '~> 0.4.2'
 	gem 'awesome_print'
 
 	gem 'guard-test'
@@ -37,7 +36,6 @@ gem 'state_machine'
 gem 'kaminari'
 
 gem 'haml-rails'
-# gem 'bootstrap-sass'
 
 gem "twitter-bootstrap-rails"
 
@@ -48,3 +46,7 @@ gem 'foreman'
 
 gem 'coveralls', require: false
 gem 'simplecov'
+
+gem 'spring'
+gem 'guard-spring'
+gem 'rb-readline', '~> 0.4.2'

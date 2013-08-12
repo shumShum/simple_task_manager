@@ -8,12 +8,16 @@ module Authorization
     end
   end
 
+  def signed_in?
+    current_user
+  end
+
   def redirect_if_user_is_not_authorized
-    redirect_to new_session_path unless current_user.present?  
+    redirect_to new_session_path unless signed_in?
   end
 
   def redirect_if_user_is_authorized
-    redirect_to root_path if current_user.present?
+    redirect_to root_path if signed_in?
   end
 
   def sign_in(user_id)

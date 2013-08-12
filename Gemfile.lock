@@ -67,6 +67,9 @@ GEM
       lumberjack (>= 1.0.2)
       pry (>= 0.9.10)
       thor (>= 0.14.6)
+    guard-spring (0.0.3)
+      guard
+      spring
     guard-test (1.0.0)
       guard (>= 1.8)
       test-unit (~> 2.2)
@@ -155,6 +158,7 @@ GEM
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
     slop (3.4.6)
+    spring (0.0.10)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -199,6 +203,7 @@ DEPENDENCIES
   execjs
   factory_girl_rails (~> 4.0)
   foreman
+  guard-spring
   guard-test
   haml-rails
   jquery-rails
@@ -211,6 +216,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_form
   simplecov
+  spring
   state_machine
   terminal-notifier-guard
   therubyracer

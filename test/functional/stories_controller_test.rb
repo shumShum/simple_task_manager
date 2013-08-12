@@ -38,7 +38,8 @@ class StoriesControllerTest < ActionController::TestCase
   test "should call event" do
     post :event, {event: 'to_start', story_id: @story}
     assert_response :redirect
-    assert Story.find(@story.id).state == 'start'
+    started_story = Story.find(@story.id)
+    assert started_story.start?
   end
 
 end
