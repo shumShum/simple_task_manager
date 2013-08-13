@@ -1,18 +1,14 @@
-#filters.span12
-  = search_form_for @search, url: search_stories_path, method: :post do |f|
-    = f.attribute_fields do |a| 
-      = a.attribute_select associations: [:category] 
-    = f.predicate_select
-    = f.value_fields do |v|
-      = v.text_field :value
-    .actions= f.submit "Search"
-
-  .span4
-    By state
-    = select_tag "state_filter", options_for_select(['all', 'new', 'start', 'finish', 'accept', 'reject']), options = {style: "width: 150px; margin-left: 10px;"}
-  .span4
-    By assigner
-    = select_tag "assigner_filter", options_for_select(users_for_select), options = {style: "width: 150px; margin-left: 10px;"}
-  .span4
-    By assignee
-    = select_tag "assignee_filter", options_for_select(users_for_select), options = {style: "width: 150px; margin-left: 10px;"}
+#filters
+  .span12
+    = search_form_for @search, url: search_stories_path, method: :post do |f|
+      .span3
+        By state
+        = f.select :state_eq, options_for_select([['all', nil], 'new', 'start', 'finish', 'accept', 'reject'])
+      .span3
+        By assigner
+        = f.select :parent_id_eq, options_for_select(users_for_select)
+      .span3
+        By assignee
+        = f.select :child_id_eq, options_for_select(users_for_select)
+      .span3
+        .actions= f.submit "Search", class: 'btn'

@@ -4,7 +4,7 @@ module StoriesHelper
     start: '#7fcee2',
     finish: '#f68f85',
     accept: '#ddd',
-    reject: '#ffff99'
+    reject: '#ffc40d'
   }
 
   def state_color(state)
@@ -12,6 +12,6 @@ module StoriesHelper
   end
 
   def users_for_select
-    User.all.map{|u| {u.name => u.id}}.reduce Hash.new.merge({'all'=>'all'}), :merge
+    User.all.map{|u| {u.name => u.id}}.reduce Hash.new.merge({'all'=>nil}), :merge
   end
 end

@@ -15,28 +15,28 @@
 //= require twitter/bootstrap
 //= require_tree .
 
-$(function() {
-  $('#filters').on('change', '#state_filter', function(e) {
-    out_by_filters();
-  });
-});
+// $(function() {
+//   $('#filters').on('change', '#q_state_eq', function(e) {
+//     out_by_filters();
+//   });
+// });
 
-$(function() {
-  $('#filters').on('change', '#assigner_filter', function(e) {
-    out_by_filters();
-  });
-});
+// $(function() {
+//   $('#filters').on('change', '#q_parent_id_eq', function(e) {
+//     out_by_filters();
+//   });
+// });
 
-$(function() {
-  $('#filters').on('change', '#assignee_filter', function(e) {
-    out_by_filters();
-  });
-});
+// $(function() {
+//   $('#filters').on('change', '#q_child_id_eq', function(e) {
+//     out_by_filters();
+//   });
+// });
 
 function out_by_filters(){
-  var state = $('#state_filter')[0].value;
-  var assigner = $('#assigner_filter')[0].value;
-  var assignee = $('#assignee_filter')[0].value;
+  var state = $('#q_state_eq')[0].value;
+  var assigner = $('#q_parent_id_eq')[0].value;
+  var assignee = $('#q_child_id_eq')[0].value;
   $.ajax({
     url: '/out_by_filters',
     type: 'GET',
