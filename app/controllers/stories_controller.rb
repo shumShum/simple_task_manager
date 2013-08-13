@@ -3,7 +3,7 @@ class StoriesController < ApplicationController
   STATES_BTN = {
     new: [{label: 'start', color: '#7fcee2'}],
     start: [{label: 'finish', color: '#f68f85'}],
-    finish: [{label: 'accept', color: '#b2ffb2'}, {label: 'reject', color: '#ffff66'}],
+    finish: [{label: 'accept', color: '#ccf2b9'}, {label: 'reject', color: '#ffc40d'}],
     accept: [],
     reject: [{label: 'start', color: '#7fcee2'}]
   }
@@ -20,15 +20,16 @@ class StoriesController < ApplicationController
   def index
     case params[:option]
     when 'to'
-      @stories = current_user.to_stories
+      @search = Story.where(child_id: current_user).search(params[:q])
       @option[:to] = true
     when 'by'
-      @stories = current_user.by_stories
+      @search = Story.where(parent_id: current_user).search(params[:q])
       @option[:by] = true
     else
-      @stories = Story.all
+      @search = Story.search(params[:q])
       @option[:all] = true
     end
+    @stories = @search.result
   end
 
   def out_by_filters
