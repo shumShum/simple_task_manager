@@ -7,8 +7,7 @@ class StoryCommentsControllerTest < ActionController::TestCase
     sign_in(@user.id)
 
     @story = create :story
-    @commentator = create :commentator
-    @comment = create :story_comment, user_id: @commentator.id, story_id: @story.id
+    @comment = create :story_comment
   end
 
   test "should create comment" do
