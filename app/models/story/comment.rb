@@ -1,4 +1,4 @@
-class StoryComment < ActiveRecord::Base
+class Story::Comment < ActiveRecord::Base
   attr_accessible :body, :user_id, :story_id
 
   belongs_to :user

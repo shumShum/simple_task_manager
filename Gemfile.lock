@@ -31,7 +31,13 @@ GEM
     arel (3.0.2)
     awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
+    better_errors (0.9.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.0.4)
+    callsite (0.0.11)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -47,6 +53,7 @@ GEM
       rest-client
       simplecov (>= 0.7)
       thor
+    debug_inspector (0.0.2)
     dotenv (0.8.0)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -100,6 +107,10 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.2.8)
+      callsite
+      rack-contrib
+      railties
     method_source (0.8.1)
     mime-types (1.23)
     multi_json (1.7.7)
@@ -114,6 +125,8 @@ GEM
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
@@ -204,6 +217,8 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bcrypt-ruby (~> 3.0.0)
+  better_errors
+  binding_of_caller
   coffee-rails (~> 3.2.1)
   coveralls
   execjs
@@ -214,6 +229,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   kaminari
+  meta_request
   pg
   pry
   rails (= 3.2.13)

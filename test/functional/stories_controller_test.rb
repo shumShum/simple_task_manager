@@ -20,14 +20,14 @@ class StoriesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, {id: @story.id}
+    get :show, id: @story.id
     assert_response :success
   end
 
   test "should create story" do
     attrs = attributes_for(:story, title: 'test create')
-    attrs[:parent_id] = create :user, email: 'parentnewtask@mail.ru'
-    attrs[:child_id] = create :user, email: 'childnewtask@mail.ru'
+    attrs[:assigner_id] = create :user, email: 'parentnewtask@mail.ru'
+    attrs[:assignee_id] = create :user, email: 'childnewtask@mail.ru'
     post :create, story: attrs
 
     assert_response :redirect
@@ -36,10 +36,10 @@ class StoriesControllerTest < ActionController::TestCase
   end
 
   test "should call event" do
-    post :event, {event: 'to_start', story_id: @story}
+    post :event, event: 'to_start', story_id: @story
     assert_response :redirect
-    started_story = Story.find(@story.id)
-    assert started_story.start?
+    @story.reload
+    assert @story.start?
   end
 
 end

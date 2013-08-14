@@ -12,8 +12,8 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
-    @story_comments = @story.story_comments.sort{|x,y| x.created_at <=> y.created_at}
-    @story_comment = @story.story_comments.build
+    @comments = @story.comments.sort{|x,y| x.created_at <=> y.created_at}
+    @comment = @story.comments.build
 
     @change_buttons = STATES_BTN[@story.state.to_sym]
   end
@@ -21,10 +21,10 @@ class StoriesController < ApplicationController
   def index
     case params[:option]
     when 'to'
-      @search = Story.where(child_id: current_user).search(params[:q])
+      @search = Story.where(assignee_id: current_user).search(params[:q])
       @option[:to] = true
     when 'by'
-      @search = Story.where(parent_id: current_user).search(params[:q])
+      @search = Story.where(assigner_id: current_user).search(params[:q])
       @option[:by] = true
     else
       @search = Story.search(params[:q])
@@ -32,24 +32,6 @@ class StoriesController < ApplicationController
     end
     @stories = @search.result
   end
-
-  # заменено на ransack
-  # def out_by_filters
-  #   assigner_option = params[:assigner_option] if params[:assigner_option] != 'all'
-  #   assignee_option = params[:assignee_option] if params[:assignee_option] != 'all'
-  #   state_option = params[:state_option] if params[:state_option] != 'all'
-
-  #   @stories = Story.page
-  #   @stories = @stories.where(parent_id: assigner_option) if assigner_option.present?
-  #   @stories = @stories.where(child_id: assignee_option) if assignee_option.present?
-  #   @stories = @stories.where(state: state_option) if state_option.present?
-  #   @stories = @stories.all
-
-  #   respond_to do |format|
-  #     format.html { redirect_to root_url }
-  #     format.js
-  #   end
-  # end
 
   def new
     @story = Story.new

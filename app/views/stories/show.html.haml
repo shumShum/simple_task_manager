@@ -4,10 +4,10 @@
     = "##{@story.id} #{@story.title}"
 .row.span12
   .span2 Assigner:
-  .span5= @story.parent.name
+  .span5= @story.assigner.name
 .row.span12
   .span2 Assignee:
-  .span5= @story.child.name
+  .span5= @story.assignee.name
 .row.span12
   .span2 State:
   .span5
