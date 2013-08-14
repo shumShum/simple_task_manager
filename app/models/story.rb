@@ -1,15 +1,15 @@
 class Story < ActiveRecord::Base
-  attr_accessible :title, :body, :parent_id, :child_id
+  attr_accessible :title, :body, :assigner_id, :assignee_id
 
-  belongs_to :child, class_name: 'User'
-  belongs_to :parent, class_name: 'User'
+  belongs_to :assignee, class_name: 'User'
+  belongs_to :assigner, class_name: 'User'
 
   has_many :story_comments
 
   validates :body, presence: true
   validates :title, presence: true
-  validates :parent_id, presence: true
-  validates :child_id, presence: true
+  validates :assigner_id, presence: true
+  validates :assignee_id, presence: true
   validates :state, presence: true
 
   state_machine initial: :new do

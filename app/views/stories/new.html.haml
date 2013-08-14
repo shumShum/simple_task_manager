@@ -5,7 +5,7 @@
   = simple_form_for @story do |f|
     = f.input :title
     = f.input :body, input_html: { rows: 5, style: "width: 565px;" } 
-    = f.association :child, label: 'Assigned to'
-    = f.hidden_field :parent_id, value: current_user.id 
+    = f.association :assignee, label: 'Assigned to'
+    = f.hidden_field :assigner_id, value: current_user.id 
 
     =f.button :submit, 'Create task'

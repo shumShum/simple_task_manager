@@ -11,20 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130729073123) do
+ActiveRecord::Schema.define(:version => 20130814140519) do
 
   create_table "stories", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "parent_id"
-    t.integer  "child_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "assigner_id"
+    t.integer  "assignee_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "state"
   end
 
-  add_index "stories", ["child_id"], :name => "index_stories_on_child_id"
-  add_index "stories", ["parent_id"], :name => "index_stories_on_parent_id"
+  add_index "stories", ["assignee_id"], :name => "index_stories_on_child_id"
+  add_index "stories", ["assigner_id"], :name => "index_stories_on_parent_id"
 
   create_table "story_comments", :force => true do |t|
     t.integer  "story_id"

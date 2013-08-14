@@ -6,9 +6,9 @@
         = f.select :state_eq, options_for_select([['all', nil], 'new', 'start', 'finish', 'accept', 'reject'])
       .span3
         By assigner
-        = f.select :parent_id_eq, options_for_select(users_for_select)
+        = f.select :assigner_id_eq, options_for_select(users_for_select)
       .span3
         By assignee
-        = f.select :child_id_eq, options_for_select(users_for_select)
+        = f.select :assignee_id_eq, options_for_select(users_for_select)
       .span3
         .actions= f.submit "Search", class: 'btn'

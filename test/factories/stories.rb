@@ -4,8 +4,8 @@ FactoryGirl.define do
   factory :story do
     title 'Test task' 
     body 'description for test task'
-    parent
-    child
+    assigner
+    assignee
   end
 
 end

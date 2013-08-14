@@ -21,10 +21,10 @@ class StoriesController < ApplicationController
   def index
     case params[:option]
     when 'to'
-      @search = Story.where(child_id: current_user).search(params[:q])
+      @search = Story.where(assignee_id: current_user).search(params[:q])
       @option[:to] = true
     when 'by'
-      @search = Story.where(parent_id: current_user).search(params[:q])
+      @search = Story.where(assigner_id: current_user).search(params[:q])
       @option[:by] = true
     else
       @search = Story.search(params[:q])
