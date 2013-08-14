@@ -4,8 +4,8 @@
 
 === badgies
 
-[![Build Status](https://travis-ci.org/shumShum/simple_task_manager.png?branch=master)](https://travis-ci.org/shumShum/simple_task_manager)
+{<img src="https://travis-ci.org/shumShum/simple_task_manager.png?branch=master" alt="Build Status" />}[https://travis-ci.org/shumShum/simple_task_manager]
 
-[![Coverage Status](https://coveralls.io/repos/shumShum/simple_task_manager/badge.png?branch=master)](https://coveralls.io/r/shumShum/simple_task_manager?branch=master)
+{<img src="https://coveralls.io/repos/shumShum/simple_task_manager/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/shumShum/simple_task_manager?branch=master]
 
-[![Code Climate](https://codeclimate.com/github/shumShum/simple_task_manager.png)](https://codeclimate.com/github/shumShum/simple_task_manager)
+{<img src="https://codeclimate.com/github/shumShum/simple_task_manager.png" />}[https://codeclimate.com/github/shumShum/simple_task_manager]
