@@ -13,7 +13,7 @@
           %tr
             %td= link_to "##{story.id}", story
             %td= story.title
-            %td= story.parent.name
-            %td= story.child.name
+            %td= story.assigner.name
+            %td= story.assignee.name
             %td
               %span.label{style: "background: #{state_color(story.state)}"}= story.state 

@@ -10,9 +10,10 @@ SimpleTaskManager::Application.routes.draw do
   resources :stories do
     post :event
     collection { post :search, to: 'stories#index' }
-    resources :story_comments, only: [:create, :destroy]
+    scope module: :stories do
+      resources :comments, only: [:create, :destroy]
+    end
   end
-  # match '/out_by_filters', to: 'stories#out_by_filters'
   get '/stories/option/:option' => 'stories#index', constraints: { option: /(to|by)/}
 
 end

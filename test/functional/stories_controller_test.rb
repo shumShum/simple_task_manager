@@ -26,8 +26,8 @@ class StoriesControllerTest < ActionController::TestCase
 
   test "should create story" do
     attrs = attributes_for(:story, title: 'test create')
-    attrs[:parent_id] = create :user, email: 'parentnewtask@mail.ru'
-    attrs[:child_id] = create :user, email: 'childnewtask@mail.ru'
+    attrs[:assigner_id] = create :user, email: 'parentnewtask@mail.ru'
+    attrs[:assignee_id] = create :user, email: 'childnewtask@mail.ru'
     post :create, story: attrs
 
     assert_response :redirect

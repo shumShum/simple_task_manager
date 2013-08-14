@@ -12,8 +12,8 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
-    @story_comments = @story.story_comments.sort{|x,y| x.created_at <=> y.created_at}
-    @story_comment = @story.story_comments.build
+    @comments = @story.comments.sort{|x,y| x.created_at <=> y.created_at}
+    @comment = @story.comments.build
 
     @change_buttons = STATES_BTN[@story.state.to_sym]
   end
@@ -21,10 +21,10 @@ class StoriesController < ApplicationController
   def index
     case params[:option]
     when 'to'
-      @search = Story.where(child_id: current_user).search(params[:q])
+      @search = Story.where(assignee_id: current_user).search(params[:q])
       @option[:to] = true
     when 'by'
-      @search = Story.where(parent_id: current_user).search(params[:q])
+      @search = Story.where(assigner_id: current_user).search(params[:q])
       @option[:by] = true
     else
       @search = Story.search(params[:q])
