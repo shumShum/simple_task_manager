@@ -4,7 +4,7 @@ class Story < ActiveRecord::Base
   belongs_to :assignee, class_name: 'User'
   belongs_to :assigner, class_name: 'User'
 
-  has_many :story_comments
+  has_many :comments
 
   validates :body, presence: true
   validates :title, presence: true

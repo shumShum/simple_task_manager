@@ -12,8 +12,8 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
-    @story_comments = @story.story_comments.sort{|x,y| x.created_at <=> y.created_at}
-    @story_comment = @story.story_comments.build
+    @comments = @story.comments.sort{|x,y| x.created_at <=> y.created_at}
+    @comment = @story.comments.build
 
     @change_buttons = STATES_BTN[@story.state.to_sym]
   end
