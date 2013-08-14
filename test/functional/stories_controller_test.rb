@@ -20,7 +20,7 @@ class StoriesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, {id: @story.id}
+    get :show, id: @story.id
     assert_response :success
   end
 
@@ -36,10 +36,10 @@ class StoriesControllerTest < ActionController::TestCase
   end
 
   test "should call event" do
-    post :event, {event: 'to_start', story_id: @story}
+    post :event, event: 'to_start', story_id: @story
     assert_response :redirect
-    started_story = Story.find(@story.id)
-    assert started_story.start?
+    @story.reload
+    assert @story.start?
   end
 
 end
