@@ -5,9 +5,9 @@
       %li.span2{class: navbar_option(@option[:all])}
         = link_to 'All tasks', stories_path
       %li.span2{class: navbar_option(@option[:to])}
-        = link_to 'Assigned to me', '/stories/option/to'
+        = link_to 'Assigned to me', stories_option_path(option: 'to')
       %li.span2{class: navbar_option(@option[:by])}
-        = link_to 'Assigned by me', '/stories/option/by'
+        = link_to 'Assigned by me', stories_option_path(option: 'by')
 
       %li.span2= link_to 'New task', new_story_path, style: "color: #32b1d0"
 
