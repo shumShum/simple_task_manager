@@ -1,11 +1,7 @@
 module Authorization
 
   def current_user
-    begin
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    rescue ActiveRecord::RecordNotFound
-      session[:user_id] = nil
-    end
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def signed_in?
@@ -28,5 +24,5 @@ module Authorization
     session[:user_id] = nil
     redirect_to new_session_path
   end
-  
+
 end
