@@ -12,6 +12,6 @@ test:
   encoding: utf8
   database: stmdb_test
   pool: 5
-  username: vagrant
+  username: postgres
   password: 1
   host: localhost
