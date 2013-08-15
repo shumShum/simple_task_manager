@@ -1,4 +1,4 @@
-class StoriesController < ApplicationController
+class Web::StoriesController < Web::ApplicationController
 
   STATES_BTN = {
     new: [{label: 'start', color: '#7fcee2'}],

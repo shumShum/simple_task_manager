@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Web::SessionsController < Web::ApplicationController
 
   before_filter :redirect_if_user_is_authorized, except: [:destroy]
 

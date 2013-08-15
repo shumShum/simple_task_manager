@@ -4,8 +4,8 @@
 .span12{style: "margin-left: 40px;"}
   = simple_form_for @story do |f|
     = f.input :title
-    = f.input :body, input_html: { rows: 5, style: "width: 565px;" } 
+    = f.input :body, input_html: { rows: 5, style: "width: 565px;" }
     = f.association :assignee, label: 'Assigned to'
-    = f.hidden_field :assigner_id, value: current_user.id 
+    = f.hidden_field :assigner_id, value: current_user.id
 
     =f.button :submit, 'Create task'
