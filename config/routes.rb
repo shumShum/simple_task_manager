@@ -15,7 +15,6 @@ SimpleTaskManager::Application.routes.draw do
         resources :comments, only: [:create, :destroy]
       end
     end
-    get '/stories/option/:option' => 'stories#index', constraints: { option: /(to|by)/}, as: :stories_option
   end
 
   namespace :api do

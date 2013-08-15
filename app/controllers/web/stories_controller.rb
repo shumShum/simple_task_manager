@@ -8,28 +8,18 @@ class Web::StoriesController < Web::ApplicationController
     reject: [{label: 'start', color: '#7fcee2'}]
   }
 
-  before_filter :redirect_if_user_is_not_authorized, :def_option
+  before_filter :redirect_if_user_is_not_authorized
 
   def show
     @story = Story.find(params[:id])
-    @comments = @story.comments.sort{|x,y| x.created_at <=> y.created_at}
+    @comments = @story.comments.all
     @comment = @story.comments.build
 
     @change_buttons = STATES_BTN[@story.state.to_sym]
   end
 
   def index
-    case params[:option]
-    when 'to'
-      @search = Story.where(assignee_id: current_user).search(params[:q])
-      @option[:to] = true
-    when 'by'
-      @search = Story.where(assigner_id: current_user).search(params[:q])
-      @option[:by] = true
-    else
-      @search = Story.search(params[:q])
-      @option[:all] = true
-    end
+    @search = Story.search(params[:q])
     @stories = @search.result
   end
 
@@ -55,12 +45,6 @@ class Web::StoriesController < Web::ApplicationController
       format.html { redirect_to @story }
       format.js
     end
-  end
-
-  private
-
-  def def_option
-    @option = { to: false, by: false, all: false }
   end
 
 end
