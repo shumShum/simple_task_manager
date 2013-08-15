@@ -15,4 +15,4 @@
               .row
                 %h6.span2{style: "color: #999"}= comment.created_at.strftime("%d.%m.%Y %H:%M")
                 - if comment.user == current_user
-                  %h6.span2.delete_comment= link_to "удалить", story_story_comment_path(@story.id, comment.id), method: :delete, remote: true
+                  %h6.span2.delete_comment= link_to "удалить", story_comment_path(@story.id, comment.id), method: :delete, remote: true
