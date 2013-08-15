@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SessionsControllerTest < ActionController::TestCase
+class Web::SessionsControllerTest < ActionController::TestCase
 
    def setup
     @user = create :user
@@ -8,7 +8,7 @@ class SessionsControllerTest < ActionController::TestCase
 
   test 'should get new' do
     get :new
-    assert_response :success  
+    assert_response :success
   end
 
   test 'should create session' do

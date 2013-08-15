@@ -1,0 +1,11 @@
+%header
+.navbar
+  .navbar-inner
+    %ul.nav
+      %li.span2.active
+        = link_to 'All tasks', stories_path
+
+      %li.span2= link_to 'New task', new_story_path, style: "color: #32b1d0"
+
+      %li.span2{style: 'text-align: right; padding-top: 10px;'}= current_user.name
+      %li.span2= link_to 'Sign out', signout_path, method: :delete

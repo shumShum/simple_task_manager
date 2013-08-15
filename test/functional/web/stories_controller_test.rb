@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StoriesControllerTest < ActionController::TestCase
+class Web::StoriesControllerTest < ActionController::TestCase
 
   def setup
     @user = create :user
@@ -8,7 +8,7 @@ class StoriesControllerTest < ActionController::TestCase
 
     @story = create :story
   end
-  
+
   test "should get index" do
     get :index
     assert_response :success

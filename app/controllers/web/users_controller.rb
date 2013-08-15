@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Web::UsersController < Web::ApplicationController
   before_filter :redirect_if_user_is_authorized
 
   def create
