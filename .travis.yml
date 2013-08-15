@@ -2,6 +2,5 @@ language: ruby
 rvm:
 - 1.9.3
 before_script:
-  - psql -c "CREATE USER task WITH PASSWORD '1';" -U postgres
   - psql -c 'create database stmdb_test;' -U postgres
   - rake db:migrate RAILS_ENV=test
