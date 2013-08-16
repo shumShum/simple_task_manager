@@ -41,10 +41,10 @@ class Web::StoriesController < Web::ApplicationController
     @story.fire_state_event(params[:event])
     @change_buttons = STATES_BTN[@story.state.to_sym]
 
-    respond_to do |format|
-      format.html { redirect_to @story }
-      format.js
-    end
+    render json: {
+      story: @story,
+      buttons: @change_buttons
+      }, status: 201
   end
 
 end

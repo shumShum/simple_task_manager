@@ -4,7 +4,7 @@ class Web::StoriesControllerTest < ActionController::TestCase
 
   def setup
     @user = create :user
-    sign_in(@user.id)
+    sign_in(@user)
 
     @story = create :story
   end

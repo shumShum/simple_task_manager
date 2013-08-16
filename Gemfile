@@ -6,12 +6,12 @@ gem 'rails', '3.2.13'
 gem 'pg'
 
 group :development do
-	gem 'awesome_print'
+  gem 'awesome_print'
 
-	gem 'guard-test'
+  gem 'guard-test'
   gem 'terminal-notifier-guard'
 
-	gem 'ruby-prof'
+  gem 'ruby-prof'
   gem 'pry'
 
   gem "better_errors"
@@ -56,3 +56,4 @@ gem 'guard-spring'
 gem 'rb-readline', '~> 0.4.2'
 
 gem 'ransack'
+gem 'term-ansicolor'

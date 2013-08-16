@@ -5,7 +5,7 @@ module Authorization
   end
 
   def signed_in?
-    current_user
+    current_user.present?
   end
 
   def redirect_if_user_is_not_authorized
