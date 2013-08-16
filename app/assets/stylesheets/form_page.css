@@ -1,19 +1,19 @@
-.form-page-bg { 
-    position: fixed; 
+.form-page-bg {
+    position: fixed;
     height: 100%;
     width: 100%;
     background: #111;
     background: rgba(70,70,70,.8);
     z-index: 100;
     top: 0;
-    left: 0; 
+    left: 0;
     }
 
   .form-page {
-    top: 100px; 
+    top: 100px;
     left: 50%;
     margin-left: -400px;
-    width: 780px;
+    width: 720px;
     background: #E9E9E9 url(modal-gloss.png) no-repeat -200px -80px;
     position: absolute;
     z-index: 101;

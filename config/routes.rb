@@ -5,7 +5,7 @@ SimpleTaskManager::Application.routes.draw do
 
     resource :session, only: [:new, :create, :destroy]
 
-    resources :users, only: [:create]
+    resources :users, only: [:new, :create]
 
     resources :stories do
       scope module: :stories do

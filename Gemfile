@@ -31,6 +31,7 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'validates'
+gem 'configus'
 
 gem 'jquery-rails'
 gem 'execjs'
