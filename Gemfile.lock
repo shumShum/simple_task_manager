@@ -184,6 +184,8 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     state_machine (1.2.0)
+    term-ansicolor (1.2.2)
+      tins (~> 0.8)
     terminal-notifier-guard (1.5.3)
     test-unit (2.5.5)
     therubyracer (0.11.4)
@@ -191,6 +193,7 @@ GEM
       ref
     thor (0.18.1)
     tilt (1.4.1)
+    tins (0.8.4)
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
@@ -241,6 +244,7 @@ DEPENDENCIES
   simplecov
   spring
   state_machine
+  term-ansicolor
   terminal-notifier-guard
   therubyracer
   twitter-bootstrap-rails
