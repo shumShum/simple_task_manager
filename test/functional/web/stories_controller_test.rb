@@ -37,7 +37,7 @@ class Web::StoriesControllerTest < ActionController::TestCase
 
   test "should call event" do
     post :event, event: 'to_start', story_id: @story
-    assert_response :redirect
+    assert_response :success
     @story.reload
     assert @story.start?
   end
