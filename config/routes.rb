@@ -3,14 +3,11 @@ SimpleTaskManager::Application.routes.draw do
   scope module: :web do
     root to: 'stories#index'
 
-    resources :sessions
-    match '/signout', to: 'sessions#destroy', via: :delete
+    resource :session, only: [:new, :create, :destroy]
 
     resources :users, only: [:create]
 
     resources :stories do
-      post :event
-      collection { post :search, to: 'stories#index' }
       scope module: :stories do
         resources :comments, only: [:create, :destroy]
       end

@@ -36,7 +36,7 @@ class Web::StoriesControllerTest < ActionController::TestCase
   end
 
   test "should call event" do
-    post :event, event: 'to_start', story_id: @story
+    put :update, event: 'to_start', id: @story
     assert_response :success
     @story.reload
     assert @story.start?

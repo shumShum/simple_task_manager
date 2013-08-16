@@ -7,7 +7,7 @@
         %h3 Sign up
     .row.span12
       .span4
-        = simple_form_for(:session, url: sessions_path) do |f|
+        = simple_form_for(:session, url: session_path) do |f|
           = render 'error_new_session_messages'
           = f.input :email
           = f.input :password

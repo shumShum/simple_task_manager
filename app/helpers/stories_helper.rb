@@ -1,4 +1,5 @@
 module StoriesHelper
+
   STATE_COLORS = {
     new: '#bbb',
     start: '#7fcee2',
@@ -16,4 +17,5 @@ module StoriesHelper
   def users_for_select
     User.all.map{|u| {u.name => u.id}}.reduce Hash.new.merge({'all'=>nil}), :merge
   end
+
 end

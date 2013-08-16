@@ -11,7 +11,7 @@ require 'rails/test_help'
 require 'factory_girl'
 
 class ActiveSupport::TestCase
-  include Authorization
+  include Concerns::Authorization
 
   require 'factory_girl_rails'
   include FactoryGirl::Syntax::Methods

@@ -1,6 +1,6 @@
 #filters
   .span12
-    = search_form_for @search, url: search_stories_path, method: :post do |f|
+    = search_form_for @search, url: stories_path, method: :get do |f|
       .span3
         By state
         = f.select :state_eq, options_for_select([['all', nil], 'new', 'start', 'finish', 'accept', 'reject'])

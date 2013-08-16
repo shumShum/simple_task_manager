@@ -1,12 +1,5 @@
 class Web::StoriesController < Web::ApplicationController
-
-  STATES_BTN = {
-    new: [{label: 'start', color: '#7fcee2'}],
-    start: [{label: 'finish', color: '#f68f85'}],
-    finish: [{label: 'accept', color: '#ccf2b9'}, {label: 'reject', color: '#ffc40d'}],
-    accept: [],
-    reject: [{label: 'start', color: '#7fcee2'}]
-  }
+  include Concerns::StatesBtn
 
   before_filter :redirect_if_user_is_not_authorized
 
@@ -15,7 +8,7 @@ class Web::StoriesController < Web::ApplicationController
     @comments = @story.comments.all
     @comment = @story.comments.build
 
-    @change_buttons = STATES_BTN[@story.state.to_sym]
+    @change_buttons = states_btn[@story.state.to_sym]
   end
 
   def index
@@ -36,10 +29,10 @@ class Web::StoriesController < Web::ApplicationController
     end
   end
 
-  def event
-    @story = Story.find(params[:story_id])
+  def update
+    @story = Story.find(params[:id])
     @story.fire_state_event(params[:event])
-    @change_buttons = STATES_BTN[@story.state.to_sym]
+    @change_buttons = states_btn[@story.state.to_sym]
 
     render json: {
       story: @story,
