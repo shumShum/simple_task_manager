@@ -6,6 +6,6 @@
     = f.input :title
     = f.input :body, input_html: {rows: 5}
     = f.association :assignee, label: 'Assigned to'
-    = f.hidden_field :assigner_id, value: current_user.id
+    = f.hidden_field :assigner_id, value: current_user
 
     =f.button :submit, 'Create task'
