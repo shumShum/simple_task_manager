@@ -1,5 +1,5 @@
 = render partial: 'header'
-%h4.page-header.row.span12{style: "margin-left: 40px"}
+%h4.page-header.row.span12
   .span10
     = "##{@story.id} #{@story.title}"
 .row.span12
@@ -13,7 +13,7 @@
   .span5
     #change-state-btn
       = render 'change_state_btn'
-.row.span12{style: 'margin-top: 15px; margin-left: 40px;'}
+.row.span12
   .span6= @story.body
 #comment-list
   = render 'comment_list'

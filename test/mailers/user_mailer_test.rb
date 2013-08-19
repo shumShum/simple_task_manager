@@ -5,6 +5,6 @@ class UserMailerTest < ActionMailer::TestCase
     user = create :user
 
     email = UserMailer.send_welcome_email(user).deliver
-    assert !ActionMailer::Base.deliveries.empty?
+    assert { !ActionMailer::Base.deliveries.empty? }
   end
 end

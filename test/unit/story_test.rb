@@ -11,7 +11,7 @@ class StoryTest < ActiveSupport::TestCase
     story = Story.new attributes_for :story
     story.assigner = @assigner
     story.assignee = @assignee
-    assert story.save
+    assert { story.save }
   end
 
 end

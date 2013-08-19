@@ -32,14 +32,14 @@ class Web::StoriesControllerTest < ActionController::TestCase
 
     assert_response :redirect
     story = Story.where(title: attrs[:title]).first
-    assert story
+    assert { story }
   end
 
   test "should call event" do
     put :update, event: 'to_start', id: @story
     assert_response :success
     @story.reload
-    assert @story.start?
+    assert { @story.start? }
   end
 
 end

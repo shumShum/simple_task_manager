@@ -11,7 +11,7 @@ class StoryCommentTest < ActiveSupport::TestCase
     comment = Story::Comment.new attributes_for 'story/comment'
     comment.user = @commentator
     comment.story = @story
-    assert comment.save
+    assert { comment.save }
   end
 
 end

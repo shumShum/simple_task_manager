@@ -17,14 +17,14 @@ class Web::Stories::CommentsControllerTest < ActionController::TestCase
 
     assert_response :success
     comment = Story::Comment.where(body: attrs[:body]).first
-    assert comment
+    assert { comment }
   end
 
   test "should destroy comment" do
     delete :destroy, story_id: @comment.story, id: @comment
 
     assert_response :success
-    assert !Story::Comment.exists?(@comment)
+    assert { !Story::Comment.exists?(@comment) }
   end
 
 end
