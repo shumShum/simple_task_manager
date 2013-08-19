@@ -4,9 +4,11 @@
       %h3 Sign in
     .row.span12
       = simple_form_for(:session, url: session_path) do |f|
-        = render 'error_messages'
-        = f.input :email
-        = f.input :password
+        .span
+          = bootstrap_flash
+          = f.input :email
+          = f.input :password
 
-        = f.button :submit, 'Enter'
+          = f.button :submit, 'Enter'
+    .offset1.span2
       = link_to "sign up", new_user_path
