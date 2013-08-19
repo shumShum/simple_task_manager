@@ -4,7 +4,6 @@
       %h3 Sign up
     .row.span12
       = simple_form_for @user do |f|
-        = render 'error_messages'
         = f.input :email
         = f.input :name
         = f.input :password

@@ -3,7 +3,7 @@
     = search_form_for @search, url: stories_path, method: :get do |f|
       .span3
         By state
-        = f.select :state_eq, options_for_select([['all', nil], 'new', 'start', 'finish', 'accept', 'reject'])
+        = f.select :state_eq, options_for_select(states_for_select)
       .span3
         By assigner
         = f.select :assigner_id_eq, options_for_select(users_for_select)

@@ -8,11 +8,11 @@ class Web::UsersController < Web::ApplicationController
   def create
     @user = UserSignUpType.new(params[:user])
     if @user.save && @user.authenticate(params[:user][:password])
-      UserMailer.signup_notify(@user).deliver
+      UserMailer.send_welcome_email(@user).deliver
       sign_in(@user.id)
       redirect_to root_path
     else
-      render new_session_path
+      render 'new'
     end
   end
 

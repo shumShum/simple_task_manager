@@ -1,7 +1,7 @@
 Configus.build Rails.env do
   env :production do
     mailer do
-      host "localhost"
+      host "yandex.ru"
       from "shumilkin.gena@yandex.ru"
     end
   end
