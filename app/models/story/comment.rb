@@ -5,6 +5,6 @@ class Story::Comment < ActiveRecord::Base
   belongs_to :story
 
   validates :body, presence: true
-  validates :user_id, presence: true
-  validates :story_id, presence: true
+  validates :user, presence: true
+  validates :story, presence: true
 end

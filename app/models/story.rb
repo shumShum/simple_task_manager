@@ -8,8 +8,8 @@ class Story < ActiveRecord::Base
 
   validates :body, presence: true
   validates :title, presence: true
-  validates :assigner_id, presence: true
-  validates :assignee_id, presence: true
+  validates :assigner, presence: true
+  validates :assignee, presence: true
   validates :state, presence: true
 
   state_machine initial: :new do

@@ -2,9 +2,16 @@ require 'test_helper'
 
 class StoryTest < ActiveSupport::TestCase
 
+  def setup
+    @assigner = create :assigner
+    @assignee = create :assignee
+  end
+
   test "valid creation new story" do
-    story = Story.new(title: 'Story title', body: 'Description', assigner_id: 1, assignee_id: 1)
+    story = Story.new attributes_for :story
+    story.assigner = @assigner
+    story.assignee = @assignee
     assert story.save
   end
-  
+
 end

@@ -4,8 +4,7 @@ class Web::Stories::CommentsController < Web::Stories::ApplicationController
   # код выглядит по меньшей мере странно, но как решить проблему с обнулением переменной @story
   # пока не знаю, поэтому оставлю как есть до лучших времен.
   def create
-    comment = Story::Comment.new(params[:story_comment])
-    comment.story = resource_story
+    comment = resource_story.comments.new(params[:story_comment])
 
     comment.save
 
