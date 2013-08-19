@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Web::Stories::CommentsControllerTest < ActionController::TestCase
+class Api::V1::Stories::CommentsControllerTest < ActionController::TestCase
 
   def setup
     @user = create :user
@@ -15,7 +15,7 @@ class Web::Stories::CommentsControllerTest < ActionController::TestCase
     attrs[:user_id] = @user.id
     post :create, story_id: @story, story_comment: attrs
 
-    assert_response :success
+    assert_response :created
     comment = Story::Comment.where(body: attrs[:body]).first
     assert { comment }
   end
