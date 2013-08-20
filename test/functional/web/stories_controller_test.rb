@@ -20,7 +20,7 @@ class Web::StoriesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, id: @story.id
+    get :show, id: @story
     assert_response :success
   end
 

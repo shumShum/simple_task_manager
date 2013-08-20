@@ -4,7 +4,7 @@ class Api::V1::Stories::CommentsControllerTest < ActionController::TestCase
 
   def setup
     @user = create :user
-    sign_in(@user.id)
+    sign_in(@user)
 
     @story = create :story
     @comment = create 'story/comment'
@@ -13,7 +13,7 @@ class Api::V1::Stories::CommentsControllerTest < ActionController::TestCase
   test "should create comment" do
     attrs = attributes_for('story/comment')
     attrs[:user_id] = @user.id
-    post :create, story_id: @story, story_comment: attrs
+    post :create, story_id: @story, story_comment: attrs, format: :json
 
     assert_response :created
     comment = Story::Comment.where(body: attrs[:body]).first
@@ -21,7 +21,7 @@ class Api::V1::Stories::CommentsControllerTest < ActionController::TestCase
   end
 
   test "should destroy comment" do
-    delete :destroy, story_id: @comment.story, id: @comment
+    delete :destroy, story_id: @comment.story, id: @comment, format: :json
 
     assert_response :success
     assert { !Story::Comment.exists?(@comment) }
