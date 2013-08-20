@@ -19,4 +19,5 @@ en:
   breadcrumbs:
     web:
       stories:
+        new: "New task"
         index: "Tasks"

@@ -22,6 +22,7 @@ class Web::StoriesController < Web::ApplicationController
 
   def new
     @story = Story.new
+    add_breadcrumb :new, new_story_path
   end
 
   def create

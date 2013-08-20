@@ -43,6 +43,7 @@ gem 'therubyracer'
 
 gem 'state_machine'
 gem 'kaminari'
+gem 'draper'
 
 gem 'haml-rails'
 
