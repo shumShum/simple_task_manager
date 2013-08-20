@@ -1,6 +1,8 @@
 class Web::StoriesController < Web::ApplicationController
   include Concerns::StatesBtn
 
+  add_breadcrumb :index, :stories_path
+
   before_filter :redirect_if_user_is_not_authorized
 
   def show
@@ -9,6 +11,8 @@ class Web::StoriesController < Web::ApplicationController
     @comment = @story.comments.build
 
     @change_buttons = states_btn[@story.state.to_sym]
+
+    add_breadcrumb @story.title, story_path(@story)
   end
 
   def index
@@ -21,7 +25,7 @@ class Web::StoriesController < Web::ApplicationController
   end
 
   def create
-    @story = Story.new(params[:story])
+    @story = current_user.by_stories.build(params[:story])
     if @story.save
       redirect_to @story
     else

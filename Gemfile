@@ -34,6 +34,8 @@ gem 'validates'
 gem 'configus'
 gem 'validates'
 gem 'wrong'
+gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'jquery-rails'
 gem 'execjs'
@@ -45,7 +47,6 @@ gem 'kaminari'
 gem 'haml-rails'
 
 gem "twitter-bootstrap-rails"
-
 gem 'simple_form'
 
 gem 'unicorn'

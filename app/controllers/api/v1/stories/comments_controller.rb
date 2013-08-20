@@ -1,10 +1,8 @@
 class Api::V1::Stories::CommentsController < Api::V1::Stories::ApplicationController
 
-  #TODO
-  # код выглядит по меньшей мере странно, но как решить проблему с обнулением переменной @story
-  # пока не знаю, поэтому оставлю как есть до лучших времен.
   def create
     @comment = resource_story.comments.build(params[:story_comment])
+    @comment.user = current_user
     @comment.save
 
     respond_with(@comment, location: nil)

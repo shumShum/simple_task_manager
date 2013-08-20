@@ -1,4 +1,7 @@
 = render partial: 'header'
+
+= render_breadcrumbs
+
 %h4.page-header.row.span12
   .span10
     = "##{@story.id} #{@story.title}"
@@ -13,7 +16,9 @@
   .span5
     #change-state-btn
       = render 'change_state_btn'
-.row.span12
+.row.span12#story-body
+  - if @story.pic.present?
+    .span4= image_tag @story.pic, class: 'thumbnail'
   .span6= @story.body
 #comment-list
   = render 'comment_list'

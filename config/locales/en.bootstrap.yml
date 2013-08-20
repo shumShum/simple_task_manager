@@ -16,3 +16,7 @@ en:
       save: "Save"
       new: "New"
       delete: "Delete"
+  breadcrumbs:
+    web:
+      stories:
+        index: "Tasks"

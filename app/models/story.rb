@@ -1,5 +1,5 @@
 class Story < ActiveRecord::Base
-  attr_accessible :title, :body, :assigner_id, :assignee_id
+  attr_accessible :title, :body, :assigner_id, :assignee_id, :pic
 
   belongs_to :assignee, class_name: 'User'
   belongs_to :assigner, class_name: 'User'
@@ -11,6 +11,8 @@ class Story < ActiveRecord::Base
   validates :assigner, presence: true
   validates :assignee, presence: true
   validates :state, presence: true
+
+  mount_uploader :pic, StoriesUploader
 
   state_machine initial: :new do
     state :start, :finish, :accept, :reject
@@ -24,7 +26,7 @@ class Story < ActiveRecord::Base
     end
 
     event :to_accept do
-      transition finish: :accept 
+      transition finish: :accept
     end
 
     event :to_reject do
