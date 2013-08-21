@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+// $(function() {
+//   $('form#new_story_comment').ajaxError(function(event, request, settings) {
+//     console.log('HUI');
+//     $('#comment-list').append($("<td></td>").text(''));
+//   });
+// });
+
+// $(function() {
+//   $('form#new_story_comment').bind('ajax:success', function(evt, data, status, xhr){
+//     $('#comment-list table tbody').append($('<tr><td></td></tr>').html("213"))
+//   });
+// });

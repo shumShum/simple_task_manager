@@ -17,6 +17,7 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'meta_request'
+  gem 'faker'
 end
 
 gem 'factory_girl_rails', "~> 4.0"
@@ -36,6 +37,7 @@ gem 'validates'
 gem 'wrong'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'ancestry'
 
 gem 'jquery-rails'
 gem 'execjs'
@@ -46,7 +48,6 @@ gem 'kaminari'
 gem 'draper'
 
 gem 'haml-rails'
-
 gem "twitter-bootstrap-rails"
 gem 'simple_form'
 

@@ -19,3 +19,6 @@
 Vagrantfile
 /cookbooks
 coverage
+
+/public/sytem/*
+/public/upload/*
