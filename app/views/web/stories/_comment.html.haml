@@ -1,0 +1,13 @@
+.comment{id: "comment_#{comment.id}"}
+  .item_comment
+    .row
+      %h6.span2= comment.user.name
+    .row
+      .span6= comment.body
+    .row
+      %h6.span2{style: "color: #999"}= comment.created_at.strftime("%d.%m.%Y %H:%M")
+      %h6.span1= link_to "reply", '#', class: 'reply_comment'
+      - if comment.user == current_user
+        %h6.span2.delete_comment= link_to "delete", api_v1_story_comment_path(@story, comment), method: :delete, remote: true
+  .row
+    = nested_comments comment.children.reverse

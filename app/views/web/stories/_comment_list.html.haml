@@ -4,15 +4,6 @@
       %tr
         %th Comments
     %tbody
-      - @comments.each do |comment|
-        %tr
-          %td
-            .comment.span7
-              .row
-                %h6.span2= comment.user.name
-              .row
-                .span6= comment.body
-              .row
-                %h6.span2{style: "color: #999"}= comment.created_at.strftime("%d.%m.%Y %H:%M")
-                - if comment.user == current_user
-                  %h6.span2.delete_comment= link_to "удалить", api_v1_story_comment_path(@story, comment), method: :delete, remote: true
+      %tr
+        %td
+          = nested_comments @comments.reverse

@@ -7,7 +7,7 @@ class Web::StoriesController < Web::ApplicationController
 
   def show
     @story = Story.find(params[:id])
-    @comments = @story.comments.all
+    @comments = @story.comments.roots
     @comment = @story.comments.build
 
     @change_buttons = states_btn[@story.state.to_sym]

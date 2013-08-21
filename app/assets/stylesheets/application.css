@@ -10,6 +10,10 @@
   color: #e65a76;
 }
 
+.reply_comment {
+  color: #32b1d0;
+}
+
 .comment {
   border-top: 3px;
   margin-left: 40px;
@@ -27,3 +31,18 @@
 #story-body {
   padding-top: 20px;
 }
+
+.nested_comments {
+  margin-left: 30px;
+}
+
+.item_comment {
+  display: block;
+  border-width: 0px 0px 2px 0px;
+  border-style: inset;
+  padding-left: 10px;
+}
+
+/*.nested_comments .nested_comments .nested_comments .nested_comments {
+  margin-left: 0px;
+}*/

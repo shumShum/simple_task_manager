@@ -27,3 +27,9 @@
 //     $('#comment-list table tbody').append($('<tr><td></td></tr>').html("213"))
 //   });
 // });
+
+$(function() {
+  $('.reply_comment').on('click', function(e) {
+
+  });
+});
