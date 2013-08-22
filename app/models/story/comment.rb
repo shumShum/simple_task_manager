@@ -1,5 +1,5 @@
 class Story::Comment < ActiveRecord::Base
-  attr_accessible :body, :user_id, :story_id
+  attr_accessible :body, :user_id, :story_id, :parent_id
 
   belongs_to :user
   belongs_to :story

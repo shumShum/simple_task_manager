@@ -14,6 +14,11 @@
   color: #32b1d0;
 }
 
+.add_root_comment {
+  color: #32b1d0;
+  display: none;
+}
+
 .comment {
   border-top: 3px;
   margin-left: 40px;
