@@ -21,12 +21,14 @@ class Web::StoriesController < Web::ApplicationController
   end
 
   def new
-    @story = Story.new
+    @story = StoryNewType.new
     add_breadcrumb :new, new_story_path
   end
 
   def create
-    @story = current_user.by_stories.build(params[:story])
+    @story = StoryNewType.new(params[:story])
+    @story.assigner = current_user
+
     if @story.save
       redirect_to @story
     else

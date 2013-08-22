@@ -1,16 +1,8 @@
 class Story < ActiveRecord::Base
-  attr_accessible :title, :body, :assigner_id, :assignee_id, :pic
-
   belongs_to :assignee, class_name: 'User'
   belongs_to :assigner, class_name: 'User'
 
   has_many :comments
-
-  validates :body, presence: true
-  validates :title, presence: true
-  validates :assigner, presence: true
-  validates :assignee, presence: true
-  validates :state, presence: true
 
   mount_uploader :pic, StoriesUploader
 

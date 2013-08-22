@@ -1,8 +1,9 @@
 class Api::V1::Stories::CommentsController < Api::V1::Stories::ApplicationController
 
   def create
-    @comment = resource_story.comments.build(params[:story_comment])
+    @comment = Story::CommentNewType.new(params[:story_comment])
     @comment.user = current_user
+    @comment.story = resource_story
     @comment.save
 
     respond_with(@comment, location: nil)

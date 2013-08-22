@@ -38,6 +38,7 @@ gem 'wrong'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ancestry'
+gem "cocoon"
 
 gem 'jquery-rails'
 gem 'execjs'

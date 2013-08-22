@@ -7,8 +7,9 @@ class Web::SessionsController < Web::ApplicationController
   end
 
   def create
+    type = UserSignInType.new(params[:session])
     user = User.find_by_email(params[:session][:email])
-    if user && user.authenticate(params[:session][:password])
+    if type.valid? && user && user.authenticate(params[:session][:password])
       sign_in(user)
       redirect_to root_url
     else

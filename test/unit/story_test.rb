@@ -8,7 +8,7 @@ class StoryTest < ActiveSupport::TestCase
   end
 
   test "valid creation new story" do
-    story = Story.new attributes_for :story
+    story = StoryNewType.new attributes_for :story
     story.assigner = @assigner
     story.assignee = @assignee
     assert { story.save }
