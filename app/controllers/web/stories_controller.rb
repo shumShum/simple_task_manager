@@ -36,8 +36,25 @@ class Web::StoriesController < Web::ApplicationController
     end
   end
 
-  def update
+  def edit
     @story = Story.find(params[:id])
+    add_breadcrumb :edit, new_story_path
+  end
+
+  def update
+    story = Story.find(params[:id])
+    @story = story.becomes StoryEditType
+    if @story.update_attributes(params[:story])
+      redirect_to story_path(@story)
+    else
+      f(:error)
+      render :edit
+    end
+  end
+
+  # render пока кнопку не поменяю на форму
+  def event
+    @story = Story.find(params[:story_id])
     @story.fire_state_event(params[:event])
     @change_buttons = states_btn[@story.state.to_sym]
 

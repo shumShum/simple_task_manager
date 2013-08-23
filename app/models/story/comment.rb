@@ -4,4 +4,8 @@ class Story::Comment < ActiveRecord::Base
 
   has_ancestry
 
+  validates :body, presence: true
+  validates :user, presence: true
+  validates :story, presence: true
+
 end

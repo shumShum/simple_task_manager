@@ -5,7 +5,9 @@ SimpleTaskManager::Application.routes.draw do
 
     resource :session, only: [:new, :create, :destroy]
     resources :users, only: [:new, :create]
-    resources :stories
+    resources :stories do
+      put :event
+    end
   end
 
   namespace :api do

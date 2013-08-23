@@ -7,6 +7,7 @@ class Web::StoriesControllerTest < ActionController::TestCase
     sign_in(@user)
 
     @story = create :story
+    @attrs = attributes_for :story, title: 'edited title'
   end
 
   test "should get index" do
@@ -35,8 +36,20 @@ class Web::StoriesControllerTest < ActionController::TestCase
     assert { story }
   end
 
+  test "should get edit" do
+    get :edit, id: @story
+    assert_response :success
+  end
+
+  test "should update story" do
+    put :update, id: @story, story: @attrs
+    assert_response :redirect
+    @story.reload
+    assert { @attrs[:title] == @story.title }
+  end
+
   test "should call event" do
-    put :update, event: 'to_start', id: @story
+    put :event, event: 'to_start', story_id: @story
     assert_response :success
     @story.reload
     assert { @story.start? }

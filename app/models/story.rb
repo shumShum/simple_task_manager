@@ -6,6 +6,11 @@ class Story < ActiveRecord::Base
 
   mount_uploader :pic, StoriesUploader
 
+  validates :body, presence: true
+  validates :title, presence: true
+  validates :assigner, presence: true
+  validates :assignee, presence: true
+
   state_machine initial: :new do
     state :start, :finish, :accept, :reject
 

@@ -1,7 +1,8 @@
-class UserSignInType < User
-  include BaseType
+class UserSignInType
+  include BaseTypeWithoutActiveRecord
 
-  attr_accessible :email, :password
+  attribute :email, String
+  attribute :password, String
 
   validates :email, presence: true, email: true
   validates :password, presence: true

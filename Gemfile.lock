@@ -32,6 +32,7 @@ GEM
       activerecord (>= 3.0.0)
     arel (3.0.2)
     awesome_print (1.1.0)
+    backports (3.3.3)
     bcrypt-ruby (3.0.1)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
@@ -63,6 +64,7 @@ GEM
       simplecov (>= 0.7)
       thor
     debug_inspector (0.0.2)
+    descendants_tracker (0.0.1)
     diff-lcs (1.1.3)
     dotenv (0.8.0)
     draper (1.2.1)
@@ -240,6 +242,9 @@ GEM
     validates (0.0.8)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
+    virtus (0.5.5)
+      backports (~> 3.3)
+      descendants_tracker (~> 0.0.1)
     wrong (0.7.0)
       diff-lcs (~> 1.1.2)
       predicated (~> 0.2.6)
@@ -291,4 +296,5 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   unicorn
   validates
+  virtus
   wrong

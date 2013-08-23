@@ -32,8 +32,8 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'validates'
+gem 'virtus'
 gem 'configus'
-gem 'validates'
 gem 'wrong'
 gem 'carrierwave'
 gem 'mini_magick'

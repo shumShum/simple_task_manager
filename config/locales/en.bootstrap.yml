@@ -20,4 +20,5 @@ en:
     web:
       stories:
         new: "New task"
+        edit: "Edit task"
         index: "Tasks"
