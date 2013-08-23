@@ -2,12 +2,7 @@ module Concerns
   module Authorization
 
     def current_user
-      session_user = User.where(id: session[:user_id]).first
-      if session[:user_id] && session_user.present?
-        @current_user ||= session_user
-      else
-        sign_out
-      end
+      @current_user ||= User.where(id: session[:user_id]).first if session[:user_id]
     end
 
     def signed_in?
