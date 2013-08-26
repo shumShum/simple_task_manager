@@ -17,3 +17,4 @@
             %td= story.assignee.name
             %td
               %span.label{style: "background: #{state_color(story.state)}"}= story.state
+    = paginate @stories

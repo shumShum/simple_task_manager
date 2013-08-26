@@ -17,7 +17,7 @@ class Web::StoriesController < Web::ApplicationController
 
   def index
     @search = Story.search(params[:q])
-    @stories = @search.result
+    @stories = @search.result.page params[:page]
   end
 
   def new

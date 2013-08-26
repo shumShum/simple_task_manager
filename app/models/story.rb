@@ -12,6 +12,8 @@ class Story < ActiveRecord::Base
   validates :assigner, presence: true
   validates :assignee, presence: true
 
+  paginates_per 10
+
   state_machine initial: :new do
     state :start, :finish, :accept, :reject
 
