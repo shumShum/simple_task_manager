@@ -6,7 +6,7 @@
     %tbody
       %tr
         %td
-          = nested_comments @comments.reverse
+          = render('nested_comments', {nested_comments: @comments})
       %tr
         %td
           = link_to 'Add comment', '#', class: 'add_root_comment'

@@ -1,2 +1,21 @@
 = render partial: 'header'
 = render_breadcrumbs
+
+%h4.page-header.row.span12
+  .span10 Edit task
+.span12
+  = simple_form_for @story do |f|
+    = bootstrap_flash
+    = f.input :title
+    = f.input :body, input_html: {rows: 5}
+    = f.association :assignee, label: 'Assigned to'
+    = f.input :pic, type: :file
+
+    %h5 Comments
+    #comments
+      = f.simple_fields_for :comments do |comment|
+        = render 'comment_fields', :f => comment
+      .links
+        = link_to_add_association 'add comment', f, :comments
+
+    =f.button :submit, 'Update task'

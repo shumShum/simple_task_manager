@@ -8,3 +8,6 @@ en:
       sessions:
         create:
           error: "Invalid password or email"
+      stories:
+        update:
+          error: "Invalid update arguments"
