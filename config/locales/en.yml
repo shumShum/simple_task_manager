@@ -18,3 +18,6 @@ en:
       previous: "&lsaquo; Prev"
       next: "Next &rsaquo;"
       truncate: "..."
+  time:
+    formats:
+      default: "%d-%m-%Y %H:%M"

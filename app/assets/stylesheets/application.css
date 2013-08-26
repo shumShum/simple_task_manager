@@ -51,27 +51,3 @@
   border-style: inset;
   padding-left: 10px;
 }
-
-
-#comments .input {
-    margin-left: 10px;
-}
-
-#comments div.nested-fields table {
-    margin-left: 150px;
-    width: 80%;
-}
-
-#comments label.boolean.optional {
-    width: 50px;
-}
-
-td.done_column { width: 80px; }
-
-.add_fields, .remove_fields { margin-left: 150px; }
-#comments > .nested-fields > table .remove_fields { margin-left: 0px; line-height: 30px; }
-
-#comments .clearfix { margin-bottom: 2px; }
-
-#comments > .nested-fields > .links > a.add_fields { margin-top: 2px; width:100%; display:block; margin-bottom: 20px; }
-#comments > .links > a.add_fields { margin-top: 20px; width: 100%; display:block; border-top: 1px dashed silver; }

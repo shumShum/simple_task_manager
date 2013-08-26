@@ -3,7 +3,7 @@
 
 .page-header.row.span12
   %h4.span4
-    = "##{@story.id} #{@story.title}"
+    = @story.full_title
   %h6.span7
     = link_to 'edit', edit_story_path(@story), class: 'edit_story_link'
 .row.span12

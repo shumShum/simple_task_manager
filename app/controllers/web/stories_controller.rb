@@ -6,8 +6,8 @@ class Web::StoriesController < Web::ApplicationController
   before_filter :redirect_if_user_is_not_authorized
 
   def show
-    @story = Story.find(params[:id])
-    @comments = @story.comments.roots
+    @story = Story.find(params[:id]).decorate
+    @comments = @story.comments.roots.decorate
     @comment = @story.comments.build
 
     @change_buttons = states_btn[@story.state.to_sym]
@@ -17,7 +17,7 @@ class Web::StoriesController < Web::ApplicationController
 
   def index
     @search = Story.search(params[:q])
-    @stories = @search.result.page params[:page]
+    @stories = @search.result.page(params[:page]).per(10).decorate
   end
 
   def new
