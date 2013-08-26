@@ -16,5 +16,5 @@
             %td= story.assigner.name
             %td= story.assignee.name
             %td
-              %span.label{style: "background: #{story.state_btn_background}"}= story.state
+              %span.label{style: "background: #{story.state_btn_background}"}= story.human_state_name
     = paginate @stories
