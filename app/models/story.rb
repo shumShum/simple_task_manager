@@ -2,7 +2,7 @@ class Story < ActiveRecord::Base
   belongs_to :assignee, class_name: 'User'
   belongs_to :assigner, class_name: 'User'
 
-  has_many :comments, class_name: CommentNewType
+  has_many :comments
   accepts_nested_attributes_for :comments, :reject_if => :all_blank, :allow_destroy => true
 
   mount_uploader :pic, StoriesUploader

@@ -23,6 +23,11 @@
   display: none;
 }
 
+#current_user_name {
+  text-align: right;
+  padding-top: 10px;
+}
+
 .comment {
   border-top: 3px;
   margin-left: 40px;

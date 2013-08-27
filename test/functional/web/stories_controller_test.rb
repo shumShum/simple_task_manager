@@ -26,7 +26,7 @@ class Web::StoriesControllerTest < ActionController::TestCase
   end
 
   test "should create story" do
-    attrs = attributes_for(:story, title: 'test create')
+    attrs = attributes_for :story
     attrs[:assigner_id] = create :user, email: 'parentnewtask@mail.ru'
     attrs[:assignee_id] = create :user, email: 'childnewtask@mail.ru'
     post :create, story: attrs

@@ -1,10 +1,8 @@
 class Api::V1::Stories::CommentsController < Api::V1::Stories::ApplicationController
 
   def create
-    # TODO это нужно обсудить
-    # такой вариант красивей и теперь (после 'has_many comments, class_name: CommentsNewType')
-    # но тогда так нужно делать и в стори (для единообразия), но там все не так просто (у стори несколько типов)
-    @comment = resource_story.comments.build(params[:story_comment])
+    @comment = Story::CommentNewType.new(params[:story_comment])
+    @comment.story = resource_story
     @comment.user = current_user
     @comment.save
 

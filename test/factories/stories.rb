@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :story do
-    title 'Test task' 
+    title 'Test task'
     body 'description for test task'
     assigner
     assignee
