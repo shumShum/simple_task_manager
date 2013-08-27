@@ -18,13 +18,13 @@ class Web::StoriesController < Web::ApplicationController
   end
 
   def new
-    @story = StoryNewType.new
+    @story = current_user.by_stories.build
     add_breadcrumb :new, new_story_path
   end
 
   def create
-    @story = StoryNewType.new(params[:story])
-    @story.assigner = current_user
+    # TODO для единообразия, но опять е непонятно насколько это правильно
+    @story = current_user.by_stories.build(params[:story])
 
     if @story.save
       redirect_to @story
