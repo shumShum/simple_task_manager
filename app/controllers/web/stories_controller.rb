@@ -1,5 +1,4 @@
 class Web::StoriesController < Web::ApplicationController
-  include Concerns::StatesBtn
 
   add_breadcrumb :index, :stories_path
 
