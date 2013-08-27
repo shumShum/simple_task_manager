@@ -9,9 +9,6 @@ class Web::StoriesController < Web::ApplicationController
     @story = Story.find(params[:id]).decorate
     @comments = @story.comments.roots.decorate
     @comment = @story.comments.build
-
-    @change_buttons = states_btn[@story.state.to_sym]
-
     add_breadcrumb @story.title, story_path(@story)
   end
 
@@ -51,18 +48,6 @@ class Web::StoriesController < Web::ApplicationController
       f(:error)
       render :edit
     end
-  end
-
-  # render пока кнопку не поменяю на форму
-  def event
-    @story = Story.find(params[:story_id])
-    @story.fire_state_event(params[:event])
-    @change_buttons = states_btn[@story.state.to_sym]
-
-    render json: {
-      story: @story,
-      buttons: @change_buttons
-      }, status: 201
   end
 
 end

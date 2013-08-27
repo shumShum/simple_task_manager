@@ -9,6 +9,7 @@
     = f.input :title
     = f.input :body, input_html: {rows: 5}
     = f.association :assignee
+    = f.input :state_event, :as => :state_event
     = f.input :pic, type: :file
 
     %h5 Comments

@@ -48,11 +48,4 @@ class Web::StoriesControllerTest < ActionController::TestCase
     assert { @attrs[:title] == @story.title }
   end
 
-  test "should call event" do
-    put :event, event: 'to_start', story_id: @story
-    assert_response :success
-    @story.reload
-    assert { @story.start? }
-  end
-
 end

@@ -14,9 +14,7 @@
   .span5= @story.assignee.name
 .row.span12
   .span2 State:
-  .span5
-    #change-state-btn
-      = render 'change_state_btn'
+  .span1.label{style: "background: #{@story.state_btn_background}"}= @story.human_state_name
 .row.span12#story-body
   - if @story.pic.present?
     .span4= image_tag @story.pic, class: 'thumbnail'

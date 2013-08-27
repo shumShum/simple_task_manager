@@ -1,12 +1,13 @@
-.span7
-  %table.table
-    %thead
-      %tr
-        %th Comments
-    %tbody
-      %tr
-        %td
-          = render('nested_comments', {nested_comments: @comments})
-      %tr
-        %td
-          = link_to 'Add comment', '#', class: 'add_root_comment'
+.row
+  .span7
+    %table.table
+      %thead
+        %tr
+          %th Comments
+      %tbody
+        %tr
+          %td
+            = render('nested_comments', {nested_comments: @comments})
+        %tr
+          %td
+            = link_to 'Add comment', '#', class: 'add_root_comment'

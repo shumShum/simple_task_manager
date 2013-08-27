@@ -1,4 +1,0 @@
-- @change_buttons.each do |btn|
-  = link_to btn[:label], story_event_path(story_id: @story, event: "to_#{btn[:label]}"), method: :put, class: 'btn btn-small', remote: true, style: "background: #{btn[:color]}"
-- if @story.accept?
-  %span.label{style: "background: '#ddd'"} accept
