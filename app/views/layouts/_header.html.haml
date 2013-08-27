@@ -8,5 +8,5 @@
       %li.span2= link_to 'New task', new_story_path, style: "color: #32b1d0"
 
       - if signed_in?
-        %li.span2#current_user_name= current_user.name
+        %li.span2#current_user_name= current_user.to_s
       %li.span2= link_to 'Sign out', session_path, method: :delete

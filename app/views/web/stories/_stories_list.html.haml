@@ -2,19 +2,19 @@
   %table.table.table-striped
     %thead
       %tr
-        %th.span1 ID
-        %th.span4 Description
-        %th.span2 Assigner
-        %th.span2 Assignee
-        %th.span1 State
+        %th.span1= t('.table.id')
+        %th.span4= t('.table.description')
+        %th.span2= t('.table.assigner')
+        %th.span2= t('.table.assignee')
+        %th.span1= t('.table.state')
     %tbody
       - if @stories.present?
         - @stories.each do |story|
           %tr
             %td= link_to "##{story.id}", story
             %td= story.title
-            %td= story.assigner.name
-            %td= story.assignee.name
+            %td= story.assigner.to_s
+            %td= story.assignee.to_s
             %td
               %span.label{style: "background: #{story.state_btn_background}"}= story.human_state_name
     = paginate @stories

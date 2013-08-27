@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
                     uniqueness: true,
                     email: true
   validates :name, presence: true
+
+  def to_s
+    name
+  end
 end

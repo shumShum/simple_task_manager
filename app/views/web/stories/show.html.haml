@@ -7,10 +7,10 @@
     = link_to 'edit', edit_story_path(@story), class: 'edit_story_link'
 .row.span12
   .span2 Assigner:
-  .span5= @story.assigner.name
+  .span5= @story.assigner.to_s
 .row.span12
   .span2 Assignee:
-  .span5= @story.assignee.name
+  .span5= @story.assignee.to_s
 .row.span12
   .span2 State:
   .span1.label{style: "background: #{@story.state_btn_background}"}= @story.human_state_name
