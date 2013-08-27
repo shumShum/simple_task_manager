@@ -6,7 +6,11 @@ en:
     stories:
       index:
         table:
-          id: 'hui'
+          id: 'Id'
+          description: 'Description'
+          assigner: 'Assigner'
+          assignee: 'Assignee'
+          state: 'State'
   hello: "Hello world"
   flash:
     web:

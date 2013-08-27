@@ -40,6 +40,7 @@ class Web::StoriesController < Web::ApplicationController
   def update
     story = Story.find(params[:id])
     @story = story.becomes StoryEditType
+    @story.current_user = current_user
 
     if @story.update_attributes(params[:story])
       redirect_to story_path(@story)
