@@ -15,10 +15,10 @@
   .span2 State:
   .span1.label{style: "background: #{@story.state_btn_background}"}= @story.human_state_name
 .row.span12#story-body
-  - if @story.pic.present?
+  - if @story.pic?
     .span4= image_tag @story.pic, class: 'thumbnail'
   .span6= @story.body
 #comment-list
-  = render 'comment_list'
+  = render 'comment_list', story: @story, comments: @comments
 #add-comment
-  = render 'add_comment'
+  = render 'add_comment', story: @story, comment: @comment

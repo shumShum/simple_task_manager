@@ -8,8 +8,8 @@
         %th.span2= t('.table.assignee')
         %th.span1= t('.table.state')
     %tbody
-      - if @stories.present?
-        - @stories.each do |story|
+      - if stories.present?
+        - stories.each do |story|
           %tr
             %td= link_to "##{story.id}", story
             %td= story.title
@@ -17,4 +17,4 @@
             %td= story.assignee.to_s
             %td
               %span.label{style: "background: #{story.state_btn_background}"}= story.human_state_name
-    = paginate @stories
+    = paginate stories

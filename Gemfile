@@ -18,6 +18,9 @@ group :development do
   gem "binding_of_caller"
   gem 'meta_request'
   gem 'faker'
+
+  gem "rails_best_practices"
+  gem "reek"
 end
 
 gem 'factory_girl_rails', "~> 4.0"
