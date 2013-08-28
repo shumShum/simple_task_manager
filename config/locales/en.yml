@@ -2,6 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+
   layouts:
     header:
       all_task_link: "All tasks"
@@ -49,6 +50,7 @@ en:
         by_assigner_filter: "By assigner"
         by_assignee_filter: "By assignee"
         filter_btn: "Search"
+
   flash:
     web:
       sessions:
@@ -57,6 +59,7 @@ en:
       stories:
         update:
           error: "Invalid update arguments"
+
   views:
     pagination:
       first: "&laquo; First"
@@ -70,3 +73,28 @@ en:
   user_mailer:
     send_welcome_email:
       subject: "Welcome to simple task manager"
+
+  activerecord:
+    models:
+      user: "User"
+      story: "Story"
+      story_comment: "Comment"
+    attributes:
+      users:
+        id: "Id"
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+      story:
+        id: "Id"
+        title: "Title"
+        body: "Description"
+        state: "State"
+        assigner: "Assigner"
+        assignee: "Assignee"
+        pic: "Pic"
+      story_comments:
+        id: "Id"
+        user: "Commentator"
+        body: "Body"
