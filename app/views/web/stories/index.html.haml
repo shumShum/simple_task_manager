@@ -1,7 +1,7 @@
 = render_breadcrumbs
 
 #stories-list
-  = render 'stories_list'
+  = render 'stories_list', stories: @stories
 
 %h4.page-header.span12 Filters
-= render 'filters'
+= render 'filters', search: @search

@@ -7,7 +7,7 @@
       %tbody
         %tr
           %td
-            = render('nested_comments', {nested_comments: @comments})
+            = render 'nested_comments', {nested_comments: comments}
         %tr
           %td
             = link_to 'Add comment', '#', class: 'add_root_comment'
