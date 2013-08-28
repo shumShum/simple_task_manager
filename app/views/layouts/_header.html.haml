@@ -1,0 +1,12 @@
+%header
+.navbar
+  .navbar-inner
+    %ul.nav
+      %li.span2.active
+        = link_to t('.all_task_link'), stories_path
+
+      %li.span2= link_to t('.new_task_link'), new_story_path, style: "color: #32b1d0"
+
+      - if signed_in?
+        %li.span2#current_user_name= current_user.to_s
+      %li.span2= link_to t('.sign_out_link'), session_path, method: :delete

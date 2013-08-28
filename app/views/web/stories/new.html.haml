@@ -1,11 +1,11 @@
-= render partial: 'header'
-%h4.page-header.row.span12{style: "margin-left: 40px"}
-  .span10 New task
-.span12{style: "margin-left: 40px;"}
+= render_breadcrumbs
+%h4.page-header.row.span12
+  .span10= t('.new_task_title')
+.span12
   = simple_form_for @story do |f|
     = f.input :title
-    = f.input :body, input_html: { rows: 5, style: "width: 565px;" }
-    = f.association :assignee, label: 'Assigned to'
-    = f.hidden_field :assigner_id, value: current_user.id
+    = f.input :body, input_html: {rows: 5}
+    = f.association :assignee
+    = f.input :pic, type: :file
 
-    =f.button :submit, 'Create task'
+    =f.button :submit, t('.new_task_btn')

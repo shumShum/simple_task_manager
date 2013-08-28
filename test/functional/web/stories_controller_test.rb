@@ -7,6 +7,7 @@ class Web::StoriesControllerTest < ActionController::TestCase
     sign_in(@user)
 
     @story = create :story
+    @attrs = attributes_for :story, title: 'edited title'
   end
 
   test "should get index" do
@@ -20,26 +21,31 @@ class Web::StoriesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, id: @story.id
+    get :show, id: @story
     assert_response :success
   end
 
   test "should create story" do
-    attrs = attributes_for(:story, title: 'test create')
+    attrs = attributes_for :story
     attrs[:assigner_id] = create :user, email: 'parentnewtask@mail.ru'
     attrs[:assignee_id] = create :user, email: 'childnewtask@mail.ru'
     post :create, story: attrs
 
     assert_response :redirect
     story = Story.where(title: attrs[:title]).first
-    assert story
+    assert { story }
   end
 
-  test "should call event" do
-    post :event, event: 'to_start', story_id: @story
+  test "should get edit" do
+    get :edit, id: @story
     assert_response :success
+  end
+
+  test "should update story" do
+    put :update, id: @story, story: @attrs
+    assert_response :redirect
     @story.reload
-    assert @story.start?
+    assert { @attrs[:title] == @story.title }
   end
 
 end

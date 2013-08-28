@@ -1,34 +1,30 @@
 class Web::StoriesController < Web::ApplicationController
 
-  STATES_BTN = {
-    new: [{label: 'start', color: '#7fcee2'}],
-    start: [{label: 'finish', color: '#f68f85'}],
-    finish: [{label: 'accept', color: '#ccf2b9'}, {label: 'reject', color: '#ffc40d'}],
-    accept: [],
-    reject: [{label: 'start', color: '#7fcee2'}]
-  }
+  add_breadcrumb :index, :stories_path
 
   before_filter :redirect_if_user_is_not_authorized
 
   def show
-    @story = Story.find(params[:id])
-    @comments = @story.comments.all
+    @story = Story.find(params[:id]).decorate
+    @comments = @story.comments.roots.decorate
     @comment = @story.comments.build
-
-    @change_buttons = STATES_BTN[@story.state.to_sym]
+    add_breadcrumb @story.title, story_path(@story)
   end
 
   def index
     @search = Story.search(params[:q])
-    @stories = @search.result
+    @stories = @search.result.page(params[:page]).per(10).decorate
   end
 
   def new
     @story = Story.new
+    add_breadcrumb :new, new_story_path
   end
 
   def create
-    @story = Story.new(params[:story])
+    @story = StoryNewType.new(params[:story])
+    @story.assigner = current_user
+
     if @story.save
       redirect_to @story
     else
@@ -36,15 +32,22 @@ class Web::StoriesController < Web::ApplicationController
     end
   end
 
-  def event
-    @story = Story.find(params[:story_id])
-    @story.fire_state_event(params[:event])
-    @change_buttons = STATES_BTN[@story.state.to_sym]
+  def edit
+    @story = Story.find(params[:id])
+    add_breadcrumb :edit, new_story_path
+  end
 
-    render json: {
-      story: @story,
-      buttons: @change_buttons
-      }, status: 201
+  def update
+    story = Story.find(params[:id])
+    @story = story.becomes StoryEditType
+    @story.current_user = current_user
+
+    if @story.update_attributes(params[:story])
+      redirect_to story_path(@story)
+    else
+      f(:error)
+      render :edit
+    end
   end
 
 end

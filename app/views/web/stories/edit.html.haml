@@ -1,0 +1,21 @@
+= render_breadcrumbs
+
+%h4.page-header.row.span12
+  .span10= t('.edit_task_title')
+.span12
+  = simple_form_for @story do |f|
+    = bootstrap_flash
+    = f.input :title
+    = f.input :body, input_html: {rows: 5}
+    = f.association :assignee
+    = f.input :state_event, :as => :state_event
+    = f.input :pic, type: :file
+
+    %h5 Comments
+    #comments
+      = f.simple_fields_for :comments do |comment|
+        = render 'comment_fields', :f => comment
+      .links
+        = link_to_add_association t('.add_comment_link'), f, :comments
+
+    =f.button :submit, t('.edit_task_btn')

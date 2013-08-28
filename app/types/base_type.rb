@@ -1,19 +1,14 @@
 module BaseType
-	extend ActiveSupport::Concern
+  extend ActiveSupport::Concern
 
-	module ClassMethods
+  module ClassMethods
 
-		def model_name
-			superclass.model_name
-		end
-
-		def permit(*args)
-      @_args = args
+    def model_name
+      superclass.model_name
     end
 
-    def _args
-      @_args
+    def name
+      superclass.name
     end
-		
-	end
+  end
 end

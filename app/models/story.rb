@@ -1,16 +1,16 @@
 class Story < ActiveRecord::Base
-  attr_accessible :title, :body, :assigner_id, :assignee_id
-
   belongs_to :assignee, class_name: 'User'
   belongs_to :assigner, class_name: 'User'
 
   has_many :comments
+  accepts_nested_attributes_for :comments, :reject_if => :all_blank, :allow_destroy => true
+
+  mount_uploader :pic, StoriesUploader
 
   validates :body, presence: true
   validates :title, presence: true
-  validates :assigner_id, presence: true
-  validates :assignee_id, presence: true
-  validates :state, presence: true
+  validates :assigner, presence: true
+  validates :assignee, presence: true
 
   state_machine initial: :new do
     state :start, :finish, :accept, :reject
@@ -24,7 +24,7 @@ class Story < ActiveRecord::Base
     end
 
     event :to_accept do
-      transition finish: :accept 
+      transition finish: :accept
     end
 
     event :to_reject do

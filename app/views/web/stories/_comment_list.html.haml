@@ -1,18 +1,13 @@
-.span7{style: "margin-top: 15px;"}
-  %table.table
-    %thead
-      %tr
-        %th Comments
-    %tbody
-      - @comments.each do |comment|
+.row
+  .span7
+    %table.table
+      %thead
+        %tr
+          %th= t('.comment_list_title')
+      %tbody
         %tr
           %td
-            .comment.span7
-              .row
-                %h6.span2= comment.user.name
-              .row
-                .span6{style: "margin-left: 30px;"}= comment.body
-              .row
-                %h6.span2{style: "color: #999"}= comment.created_at.strftime("%d.%m.%Y %H:%M")
-                - if comment.user == current_user
-                  %h6.span2.delete_comment= link_to "удалить", story_comment_path(@story.id, comment.id), method: :delete, remote: true
+            = render 'nested_comments', nested_comments: comments, story: story
+        %tr
+          %td
+            = link_to t('.add_comment_link'), '#', class: 'add_root_comment'

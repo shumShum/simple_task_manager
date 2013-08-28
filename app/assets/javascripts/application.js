@@ -13,4 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require cocoon
 //= require_tree .
+
+$(document).ready(function() {
+  var new_comment_form = $('#new_story_comment');
+  var reply_link = $('.reply_comment');
+  var root_link = $('.add_root_comment');
+  var parent_field = $('#story_comment_parent_id');
+
+  reply_link.click(function(){
+    $(this).after(new_comment_form);
+    root_link.show();
+    parent_field.val($(this).attr('data_id'));
+  });
+
+  root_link.click(function(){
+    $(this).after(new_comment_form);
+    root_link.hide();
+    parent_field.val($(this).attr(''));
+  });
+});

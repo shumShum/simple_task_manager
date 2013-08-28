@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
-  include Authorization
-  include FlashHelper
+  include Concerns::Authorization
+  include Concerns::FlashHelper
 
   protect_from_forgery
 
-  helper_method :current_user
+  helper_method :current_user, :signed_in?
 
 end

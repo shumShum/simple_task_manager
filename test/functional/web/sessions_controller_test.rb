@@ -16,7 +16,7 @@ class Web::SessionsControllerTest < ActionController::TestCase
     post :create, session: auth_attr
 
     assert_response :redirect
-    assert signed_in?
+    assert { signed_in? }
   end
 
   test 'should destroy session' do
@@ -25,7 +25,7 @@ class Web::SessionsControllerTest < ActionController::TestCase
     delete :destroy
 
     assert_response :redirect
-    assert !signed_in?
+    assert { !signed_in? }
   end
 
 end

@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory 'story/comment' do
-    sequence(:body) {|n| "comment #{n} body" }
+    body
     association :user, factory: :commentator
     story
   end

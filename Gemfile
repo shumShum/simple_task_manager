@@ -17,6 +17,10 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'meta_request'
+  gem 'faker'
+
+  gem "rails_best_practices"
+  gem "reek"
 end
 
 gem 'factory_girl_rails', "~> 4.0"
@@ -31,6 +35,13 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'validates'
+gem 'virtus'
+gem 'configus'
+gem 'wrong'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ancestry'
+gem "cocoon"
 
 gem 'jquery-rails'
 gem 'execjs'
@@ -38,11 +49,11 @@ gem 'therubyracer'
 
 gem 'state_machine'
 gem 'kaminari'
+gem 'kaminari-bootstrap'
+gem 'draper'
 
 gem 'haml-rails'
-
 gem "twitter-bootstrap-rails"
-
 gem 'simple_form'
 
 gem 'unicorn'

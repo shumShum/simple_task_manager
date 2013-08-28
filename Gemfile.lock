@@ -28,8 +28,11 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    ancestry (2.0.0)
+      activerecord (>= 3.0.0)
     arel (3.0.2)
     awesome_print (1.1.0)
+    backports (3.3.3)
     bcrypt-ruby (3.0.1)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
@@ -38,6 +41,13 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.0.4)
     callsite (0.0.11)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+    cocoon (1.2.0)
+    code_analyzer (0.4.2)
+      sexp_processor
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -46,7 +56,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    colored (1.2)
     colorize (0.5.8)
+    configus (0.0.4)
+      rake
     coveralls (0.6.7)
       colorize
       multi_json (~> 1.3)
@@ -54,7 +67,13 @@ GEM
       simplecov (>= 0.7)
       thor
     debug_inspector (0.0.2)
+    descendants_tracker (0.0.1)
+    diff-lcs (1.1.3)
     dotenv (0.8.0)
+    draper (1.2.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0.3)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -63,6 +82,8 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    faker (1.2.0)
+      i18n (~> 0.5)
     ffi (1.9.0)
     foreman (0.63.0)
       dotenv (>= 0.7)
@@ -97,6 +118,9 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-bootstrap (0.1.3)
+      kaminari (>= 0.13.0)
+      rails
     kgio (2.8.0)
     libv8 (3.11.8.17)
     listen (1.2.2)
@@ -113,11 +137,14 @@ GEM
       railties
     method_source (0.8.1)
     mime-types (1.23)
+    mini_magick (3.6.0)
+      subexec (~> 0.2.1)
     multi_json (1.7.7)
     pg (0.16.0)
     polyamorous (0.6.3)
       activerecord (>= 3.0)
     polyglot (0.3.3)
+    predicated (0.2.6)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -139,6 +166,15 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails_best_practices (1.14.3)
+      activesupport
+      awesome_print
+      code_analyzer (>= 0.4.2)
+      colored
+      erubis
+      i18n
+      require_all
+      ruby-progressbar
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -160,15 +196,28 @@ GEM
     rb-readline (0.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
+    reek (1.3.3)
+      ruby2ruby (~> 2.0.2)
+      ruby_parser (~> 3.1, >= 3.1.1)
+      sexp_processor
     ref (1.0.5)
+    request_store (1.0.5)
+    require_all (1.2.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     ruby-prof (0.13.0)
+    ruby-progressbar (1.2.0)
+    ruby2ruby (2.0.6)
+      ruby_parser (~> 3.1)
+      sexp_processor (~> 4.0)
+    ruby_parser (3.2.2)
+      sexp_processor (~> 4.1)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    sexp_processor (4.2.1)
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -184,6 +233,7 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     state_machine (1.2.0)
+    subexec (0.2.3)
     term-ansicolor (1.2.2)
       tins (~> 0.8)
     terminal-notifier-guard (1.5.3)
@@ -213,31 +263,50 @@ GEM
     validates (0.0.8)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
+    virtus (0.5.5)
+      backports (~> 3.3)
+      descendants_tracker (~> 0.0.1)
+    wrong (0.7.0)
+      diff-lcs (~> 1.1.2)
+      predicated (~> 0.2.6)
+      ruby2ruby (>= 2.0.1)
+      ruby_parser (>= 3.0.1)
+      sexp_processor (>= 4.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  ancestry
   awesome_print
   bcrypt-ruby (~> 3.0.0)
   better_errors
   binding_of_caller
+  carrierwave
+  cocoon
   coffee-rails (~> 3.2.1)
+  configus
   coveralls
+  draper
   execjs
   factory_girl_rails (~> 4.0)
+  faker
   foreman
   guard-spring
   guard-test
   haml-rails
   jquery-rails
   kaminari
+  kaminari-bootstrap
   meta_request
+  mini_magick
   pg
   pry
   rails (= 3.2.13)
+  rails_best_practices
   ransack
   rb-readline (~> 0.4.2)
+  reek
   ruby-prof
   sass-rails (~> 3.2.3)
   simple_form
@@ -251,3 +320,5 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   unicorn
   validates
+  virtus
+  wrong

@@ -1,5 +1,5 @@
-.span12{style: "margin-left: 40px;"}
-  = simple_form_for(@comment, url: story_comments_path(@story.id), remote: true) do |f|
-    = f.input :body, as: :text, input_html: { rows: 4, style: "width: 565px;" }, label: false
-    = f.hidden_field :user_id, value: current_user.id
-    = f.button :submit, 'Add comment'
+.span12
+  = simple_form_for(comment, url: api_v1_story_comments_path(story), remote: true) do |f|
+    = f.input :body, as: :text, input_html: {rows: 4}, label: false
+    = f.input :parent_id, as: :hidden
+    = f.button :submit, t('.add_comment_btn')

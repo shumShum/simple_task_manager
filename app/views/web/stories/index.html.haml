@@ -1,7 +1,7 @@
-= render partial: 'header'
+= render_breadcrumbs
 
 #stories-list
-  = render 'stories_list'
+  = render 'stories_list', stories: @stories
 
-%h4.page-header.span12{style: "margin-left: 40px"} Filters
-= render 'filters'
+%h4.page-header.span12 Filters
+= render 'filters', search: @search
