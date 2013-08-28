@@ -4,13 +4,13 @@
   %h4.span4
     = @story.full_title
   %h6.span7
-    = link_to 'edit', edit_story_path(@story), class: 'edit_story_link'
+    = link_to t('.edit_link'), edit_story_path(@story), class: 'edit_story_link'
 .row.span12
   .span2 Assigner:
-  .span5= @story.assigner.to_s
+  .span5= "#{@story.assigner}"
 .row.span12
   .span2 Assignee:
-  .span5= @story.assignee.to_s
+  .span5= "#{@story.assignee}"
 .row.span12
   .span2 State:
   .span1.label{style: "background: #{@story.state_btn_background}"}= @story.human_state_name

@@ -1,7 +1,7 @@
 .form-page-bg
   .form-page
     .row.span12
-      %h3 Sign in
+      %h3= t('.sign_in_title')
     .row.span12
       = simple_form_for(:session, url: session_path) do |f|
         .span
@@ -9,6 +9,6 @@
           = f.input :email
           = f.input :password
 
-          = f.button :submit, 'Enter'
+          = f.button :submit, t('.sign_in_btn')
     .offset1.span2
-      = link_to "sign up", new_user_path
+      = link_to t('.sign_up_link'), new_user_path

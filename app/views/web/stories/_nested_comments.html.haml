@@ -1,2 +1,2 @@
 - nested_comments.reverse.map do |comment, sub_comments|
-  .nested_comments= render('comment', {comment: comment})
+  .nested_comments= render 'comment', comment: comment, story: story

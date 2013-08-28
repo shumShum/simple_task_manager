@@ -1,7 +1,7 @@
 = render_breadcrumbs
 
 %h4.page-header.row.span12
-  .span10 Edit task
+  .span10= t('.edit_task_title')
 .span12
   = simple_form_for @story do |f|
     = bootstrap_flash
@@ -16,6 +16,6 @@
       = f.simple_fields_for :comments do |comment|
         = render 'comment_fields', :f => comment
       .links
-        = link_to_add_association 'add comment', f, :comments
+        = link_to_add_association t('.add_comment_link'), f, :comments
 
-    =f.button :submit, 'Update task'
+    =f.button :submit, t('.edit_task_btn')

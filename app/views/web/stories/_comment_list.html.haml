@@ -3,11 +3,11 @@
     %table.table
       %thead
         %tr
-          %th Comments
+          %th= t('.comment_list_title')
       %tbody
         %tr
           %td
-            = render 'nested_comments', {nested_comments: comments}
+            = render 'nested_comments', nested_comments: comments, story: story
         %tr
           %td
-            = link_to 'Add comment', '#', class: 'add_root_comment'
+            = link_to t('.add_comment_link'), '#', class: 'add_root_comment'

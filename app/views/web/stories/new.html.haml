@@ -1,6 +1,6 @@
 = render_breadcrumbs
 %h4.page-header.row.span12
-  .span10 New task
+  .span10= t('.new_task_title')
 .span12
   = simple_form_for @story do |f|
     = f.input :title
@@ -8,4 +8,4 @@
     = f.association :assignee
     = f.input :pic, type: :file
 
-    =f.button :submit, 'Create task'
+    =f.button :submit, t('.new_task_btn')
