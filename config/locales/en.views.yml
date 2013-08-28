@@ -1,0 +1,50 @@
+en:
+  web:
+    users:
+      new:
+        new_user_btn: "New user"
+        sign_up_title: "Sign up"
+    sessions:
+      new:
+        sign_in_btn: "Enter"
+        sign_in_title: "Sign in"
+        sign_up_link: "sign up"
+    stories:
+      show:
+        edit_link: "edit"
+      comment:
+        reply_btn: "reply"
+        delete_btn: "delete"
+      add_comment:
+        add_comment_btn: "Add comment"
+      comment_list:
+        commet_list_title: "Comments"
+        add_comment_link: "Add comment"
+      index:
+        table:
+          id: "Id"
+          description: "Description"
+          assigner: Assigner
+          assignee: Assignee
+          state: State
+      new:
+        new_task_title: "New task"
+        new_task_btn: "Create task"
+      edit:
+        edit_task_title: "Edit task"
+        edit_task_btn: "Update task"
+        add_comment_link: "add comment"
+      comment_fields:
+        remove_comment_link: "remove comment"
+      filters:
+        by_state_filter: "By state"
+        by_assigner_filter: "By assigner"
+        by_assignee_filter: "By assignee"
+        filter_btn: "Search"
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "..."

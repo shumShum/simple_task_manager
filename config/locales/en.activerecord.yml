@@ -1,0 +1,25 @@
+en:
+  activerecord:
+    models:
+      user: "User"
+      story: "Story"
+      story_comment: "Comment"
+    attributes:
+      users:
+        id: "Id"
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+      story:
+        id: "Id"
+        title: "Title"
+        body: "Description"
+        state: "State"
+        assigner: "Assigner"
+        assignee: "Assignee"
+        pic: "Pic"
+      story_comments:
+        id: "Id"
+        user: "Commentator"
+        body: "Body"

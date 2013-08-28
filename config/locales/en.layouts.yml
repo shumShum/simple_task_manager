@@ -1,0 +1,6 @@
+en: 
+  layouts:
+    header:
+      all_task_link: "All tasks"
+      new_task_link: "New task"
+      sign_out_link: "Sign out"
