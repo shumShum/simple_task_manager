@@ -15,7 +15,7 @@ class Api::V1::Stories::CommentsControllerTest < ActionController::TestCase
     attrs[:user_id] = @user.id
     post :create, story_id: @story, story_comment: attrs, format: :json
 
-    assert_response :created
+    assert_response :success
     comment = Story::Comment.where(body: attrs[:body]).first
     assert { comment }
   end

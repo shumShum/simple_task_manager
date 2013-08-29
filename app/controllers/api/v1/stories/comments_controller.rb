@@ -13,7 +13,7 @@ class Api::V1::Stories::CommentsController < Api::V1::Stories::ApplicationContro
     @comment = resource_story.comments.find(params[:id])
     @comment.destroy
 
-    respond_with(@comments, location: nil)
+    respond_with(@comment, location: nil)
   end
 
 end

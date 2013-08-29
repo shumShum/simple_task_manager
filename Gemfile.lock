@@ -110,6 +110,9 @@ GEM
       railties (>= 3.1, < 4.1)
     hike (1.2.3)
     i18n (0.6.1)
+    jbuilder (1.5.1)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
     journey (1.0.4)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -295,6 +298,7 @@ DEPENDENCIES
   guard-spring
   guard-test
   haml-rails
+  jbuilder
   jquery-rails
   kaminari
   kaminari-bootstrap

@@ -41,7 +41,8 @@ gem 'wrong'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ancestry'
-gem "cocoon"
+gem 'cocoon'
+gem 'jbuilder'
 
 gem 'jquery-rails'
 gem 'execjs'
